@@ -1,0 +1,88 @@
+/*
+Project Name: Blank Template
+Client: Your Client
+Author: Your Name
+*/
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+/* Box Model Hack */
+
+* {
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  font-size: @font-size-base;
+  line-height: 1.4;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  min-height:100%;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/*
+tag: 1
+class: 10
+id: 100
+important: 1000
+*/
+
+main {
+
+}
+
+h1{ font-size: 2em }
+h2{ font-size: 1.8em }
+h3{ font-size: 1.6em }
+h4{ font-size: 1.4em }
+h5{ font-size: 1.2em }
+p,h6{ font-size: 1em }
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* Header */
+
+header{
+  nav{
+    padding: 0px 5px;
+    background-color: @nav-color;
+  }
+}
+
+
+/* Main */
+
+main{
+  flex: 1 0 auto;
+}
+
+/* Footer */
+
+footer {
+  &.page-footer {
+    background-color: @nav-color;
+  }
+
+  .footer-copyright {
+    background-color: @nav-color;
+  }
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

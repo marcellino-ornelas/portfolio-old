@@ -1,0 +1,18 @@
+extends ../../layouts/default
+
+block content
+  .section
+    #projects.container
+      h2 Projects
+      .row
+        each project in projects
+          .col.s12.m6.l4
+            .card
+              .card-image
+                img(src=project.picture.url || project.picture)
+                span.card-title= project.name
+                a.btn-floating.btn-large.halfway-fab.waves-effect.waves-light.red(href=project.url): i.material-icons.fa.fa-plus
+              .card-content
+                p= project.description
+        else
+          h2 No projects at this time
