@@ -32,23 +32,27 @@ body {
     flex-direction: column;
 }
 
-/*
-tag: 1
-class: 10
-id: 100
-important: 1000
-*/
-
-main {
-
-}
-
 h1{ font-size: 2em }
 h2{ font-size: 1.8em }
 h3{ font-size: 1.6em }
 h4{ font-size: 1.4em }
 h5{ font-size: 1.2em }
 p,h6{ font-size: 1em }
+
+
+.validate.error{
+  border-bottom-color: red !important;
+  box-shadow: 0 1px 0 0 red !important;
+}
+
+.card {
+  height: 400px;
+
+  img {
+    height: 200px;
+  }
+}
+
 
 
 /******************************************
@@ -86,3 +90,8 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+.error{
+  font-size: 14px;
+  color: red;
+}

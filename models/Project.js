@@ -5,9 +5,7 @@ var Types = keystone.Field.Types;
  * Project Model
  * ==========
  */
-const DEFAULT_PIC = {
-  url: "http://www.artconnect.com/assets/default/default_project_list-7c7cb913cb130a76c51f21509f73bbb6.png"
-};
+const DEFAULT_PIC = "http://www.artconnect.com/assets/default/default_project_list-7c7cb913cb130a76c51f21509f73bbb6.png";
 
 var Project = new keystone.List('Project');
 
@@ -30,11 +28,14 @@ var storage = new keystone.Storage({
 Project.add({
   name: { type: Types.Text, required: true },
   description: { type: Types.Textarea },
-// picture: { type: Types.Url, default: DEFAULT_PIC },
-  picture: { type: Types.File, storage: storage, default: DEFAULT_PIC },
+  picture: { type: Types.File, storage: storage },
 }, "Project Links",{
   github: { type: Types.Url },
   website: { type: Types.Url }
+});
+
+Project.schema.virtual('pictureURL').get(function(){
+  return this.picture.url || DEFAULT_PIC
 });
 
 Project.schema.virtual('url').get(function () {

@@ -9,7 +9,7 @@ block content
           .col.s12.m6.l4
             .card
               .card-image
-                img(src=project.picture.url || project.picture)
+                img(src=project.pictureURL)
                 span.card-title= project.name
                 a.btn-floating.btn-large.halfway-fab.waves-effect.waves-light.red(href=project.url): i.material-icons.fa.fa-plus
               .card-content

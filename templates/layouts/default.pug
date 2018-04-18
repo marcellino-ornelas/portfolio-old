@@ -60,19 +60,6 @@ html
             li: a(href='/keystone') Admin
             li: a(href='/keystone/signout') Sign Out
 
-          //-
-            ul.nav.navbar-nav.navbar-left
-              each link in navLinks
-                li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-            ul.nav.navbar-nav.navbar-right
-              if user
-                if user.canAccessKeystone
-                  li: a(href='/keystone') Open Keystone
-                li: a(href='/keystone/signout') Sign Out
-              else
-                li: a(href='/keystone/signin') Sign In
-
-
     //- BODY
     main#body
 
@@ -99,10 +86,8 @@ html
             h5.white-text Footer Contact
             p.grey-text.text-lighten-4 You can use rows and columns here to organize your footer content.
           .col.l6.s12
-            h5.white-text Links
+            h5.white-text Extras
             ul
-              li: a(href="/") Home
-              li: a(href="/") Home
               if user && user.canAccessKeystone
                 li: a(href='/keystone') Admin
                 li: a(href='/keystone/signout') Sign Out
@@ -123,8 +108,9 @@ html
     if user && user.canAccessKeystone
       script(src='/keystone/js/content/editor.js')
 
+    //- Include template-specific javascript files by extending the js block
+    block js
+
     //- Add scripts that are globally required by your site here.
     script(src="/js/app.js")
 
-    //- Include template-specific javascript files by extending the js block
-    block js

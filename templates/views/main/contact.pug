@@ -1,24 +1,28 @@
 extends ../../layouts/default
 
+block js
+  script(src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js")
+  script(src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js")
+
 block content
   .section.container
-    form( method='POST', action='/contact-us' )
       h2 Contact Me
-      .row
-        .input-field.col.s12.m6
-          input#first-name.validate( type="text" )
-          label(for='first-name') First Name
-        .input-field.col.s12.m6
-          input#last-name.validate( type="text" )
-          label(for='last-name') Last Name
-      .input-field.col.s12
-          input#email.validate( type="email" )
-          label(for='email') Email
-      .input-field.col.s12
-          textarea#description.materialize-textarea.validate
-          label(for='description') Description
-      button.waves-effect.waves-light.btn
-        | Submit
-        i.material-icons.right.fa.fa-paper-plane(aria-hidden='true')
+      form#contact(method='POST', action='/contact', novalidate='novalidate')
+        .row
+          .input-field.col.s12.m6
+            input#first-name.validate( type="text", name='first-name' )
+            label(for='first-name') First Name
+          .input-field.col.s12.m6
+            input#last-name.validate( type="text", name='last-name' )
+            label(for='last-name') Last Name
+        .input-field.col.s12
+            input#email.validate( type="email", name='email' )
+            label(for='email') Email
+        .input-field.col.s12
+            textarea#description.materialize-textarea.validate(name='description' )
+            label(for='description') Description
+        button(type='submit').waves-effect.waves-light.btn
+          | Submit
+          i.material-icons.right.fa.fa-paper-plane(aria-hidden='true')
 
 
