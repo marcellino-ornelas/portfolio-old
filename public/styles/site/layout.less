@@ -88,21 +88,37 @@ main{
   border: none;
 }
 
-.social-list {
-
-  .social-item {
-    display: flex;
-    padding: 1em 0;
+.about-us .header{
+  align-items: center;
+  flex-wrap: wrap;
+  > *{
+    padding-top: .5em;
   }
-   .social-item:nth-child(1n+1){
-    border-top: 1px solid grey;
-   }
-
-  .social-item-brand{
-    flex: 1 0 auto;
+  h3{
     margin: 0;
+    flex: 2 0 auto;
   }
 }
+
+.about-us .social a{
+  color: inherit;
+}
+
+// .social-list {
+
+//   .social-item {
+//     display: flex;
+//     padding: 1em 0;
+//   }
+//    .social-item:nth-child(1n+1){
+//     border-top: 1px solid grey;
+//    }
+
+//   .social-item-brand{
+//     flex: 1 0 auto;
+//     margin: 0;
+//   }
+// }
 
 
 /* Footer */
@@ -120,6 +136,58 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+/*
+ * flex
+*/
+
+.fx{
+  display: flex;
+}
+
+
+.social{
+  justify-content: space-between;
+  flex: 1 0 auto;
+  a{
+    color: white;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+/*
+ * flash messages
+*/
+
+.message {
+  display: block;
+  border-radius: 10px;
+  padding: 20px 10px;
+  // width: 75%;
+  margin: 10px auto;
+
+}
+
+.message.info{
+  color:#03a9f4;
+  background-color:#e1f5fe;
+}
+
+.message.success{
+  color:#4caf50;
+  background-color:#c8e6c9;
+}
+
+.message.warning{
+  color:#ff9800;
+  background-color:#ffe0b2;
+}
+
+.message.error{
+  color: #f44336;
+  background-color:#ffebee;
+}
 
 /*
  https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/

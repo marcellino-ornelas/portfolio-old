@@ -40,6 +40,11 @@ exports = module.exports = function (app) {
   app.get('/contact-us', routes.views.contact );
   app.get('/about', routes.views.about );
 
+  app.post('/contact', function(req, res){
+    req.flash('warning', 'This functionality is coming soon. Please email me instead. Thanks');
+    res.redirect('/about')
+  })
+
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
