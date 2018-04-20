@@ -1,5 +1,47 @@
 extends ../../layouts/default
 
 block content
-  .section.container
-    h2 About Me
+  .about-us.section: .row
+    .col.s12.m12.l3
+      div.center-align: img.full(src='/images/portrait.jpg')
+      ul.collection
+        a.collection-item(href="/Resume.pdf" target="_blank") Resume
+        a.collection-item(href='/Resume.pdf' download) Download Resume
+        a.collection-item(href="/contact-us") Contact Me
+    .col.s12.m12.l9
+      h3.header Marcellino Ornelas
+      .divider
+      .row
+        .s12
+          h3 Social
+          ul.social-list
+            li.social-item
+              h4.social-item-brand Email:
+              span
+                a(href='mailto:marcellino.ornelas@gmail.com', target="_blank") marcellino.ornelas@gmail.com
+            li.social-item
+              h4.social-item-brand Linked In:
+              span
+                a(href="https://www.linkedin.com/in/marcellino-ornelas/", target="_blank") Marcellino Ornelas
+            li.social-item
+              h4.social-item-brand Git Hub:
+              span
+                a(href='https://github.com/marcellino-ornelas', target="_blank") marcellino-ornelas
+            //- li.social-item
+            //-   h4
+            //-   span
+
+
+
+        //- .col.s12
+        //-   ul.tabs
+        //-     li.tab.col.s4: a(href="#progress-page") Wins
+        //-     li.tab.col.s4: a(href="#ratio-page") Ratio
+        //-     li.tab.col.s4: a(href="#history-page") History
+        //- #progress-page.col.s12.section
+
+        //- #ratio-page.col.s12.section
+
+        //- #history-page.col.s12.section
+
+

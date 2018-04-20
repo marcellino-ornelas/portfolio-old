@@ -13,6 +13,6 @@ block content
                 span.card-title= project.name
                 a.btn-floating.btn-large.halfway-fab.waves-effect.waves-light.red(href=project.url): i.material-icons.fa.fa-plus
               .card-content
-                p= project.description
+                p.truncate-text= project.description
         else
           h2 No projects at this time

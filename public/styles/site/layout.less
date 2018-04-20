@@ -32,6 +32,8 @@ body {
     flex-direction: column;
 }
 
+a{ color: @link-color}
+
 h1{ font-size: 2em }
 h2{ font-size: 1.8em }
 h3{ font-size: 1.6em }
@@ -39,6 +41,9 @@ h4{ font-size: 1.4em }
 h5{ font-size: 1.2em }
 p,h6{ font-size: 1em }
 
+ul {
+  list-style: none;
+}
 
 .validate.error{
   border-bottom-color: red !important;
@@ -53,6 +58,9 @@ p,h6{ font-size: 1em }
   }
 }
 
+img {
+  width: 250px;
+}
 
 
 /******************************************
@@ -75,6 +83,28 @@ main{
   flex: 1 0 auto;
 }
 
+/* About */
+.about-us .collection{
+  border: none;
+}
+
+.social-list {
+
+  .social-item {
+    display: flex;
+    padding: 1em 0;
+  }
+   .social-item:nth-child(1n+1){
+    border-top: 1px solid grey;
+   }
+
+  .social-item-brand{
+    flex: 1 0 auto;
+    margin: 0;
+  }
+}
+
+
 /* Footer */
 
 footer {
@@ -90,6 +120,15 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+/*
+ https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
+*/
+.truncate-text {
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .error{
   font-size: 14px;
