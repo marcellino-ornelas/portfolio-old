@@ -193,9 +193,12 @@ footer {
  https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
 */
 .truncate-text {
-  width: 250px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  p{
+    overflow: hidden;
+  }
 }
 
 .error{

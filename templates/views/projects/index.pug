@@ -15,7 +15,7 @@ block content
                 target='_blank'
               )
                 i.material-icons.fa.fa-search-plus(aria-hidden="true")
-            .card-content
-              p.truncate-text= project.description
+            .card-content.truncate-text
+              p= project.description
         else
           h2 No projects at this time
