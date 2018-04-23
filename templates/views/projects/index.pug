@@ -11,7 +11,7 @@ block content
               img(src=project.pictureURL)
               span.card-title= project.name
               a.btn-floating.btn-large.halfway-fab.waves-effect.waves-light.red(
-                href=project.website || project.github
+                href=(project.website || project.github)
                 target='_blank'
               )
                 i.material-icons.fa.fa-search-plus(aria-hidden="true")
