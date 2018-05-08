@@ -9,7 +9,8 @@
  */
 var _ = require('lodash');
 
-
+var keystone = require('keystone');
+const User = keystone.list('User').model
 /**
 	Initialises the standard view locals
 
@@ -52,3 +53,21 @@ exports.requireUser = function (req, res, next) {
 		next();
 	}
 };
+
+/*
+ * Load My Profile
+*/
+exports.loadMyProfile = function( req, res, next ){
+	User.findOne({ isAdmin: true })
+    .exec()
+    .then(function( admin ){
+    	res.locals.admin = admin || {};
+    })
+    .catch(function( err ){
+        req.flash('error', 'Sorry, something went wrong loading my data. Please try again later');
+    })
+    .then(function(){
+    	next();
+    });
+};
+

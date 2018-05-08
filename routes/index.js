@@ -18,21 +18,25 @@
  * http://expressjs.com/api.html#app.VERB
  */
 
-var keystone = require('keystone');
-var middleware = require('./middleware');
-var importRoutes = keystone.importer(__dirname);
+const keystone = require('keystone');
+const middleware = require('./middleware');
+const async = require('async');
+
+const importRoutes = keystone.importer(__dirname);
 
 // Common Middleware
 keystone.pre('routes', middleware.initLocals);
 keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
-var routes = {
+const routes = {
 	views: importRoutes('./views'),
 };
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
+
+  app.use( middleware.loadMyProfile );
 
   // Views
 	app.get('/', routes.views.index );
@@ -41,10 +45,45 @@ exports = module.exports = function (app) {
   app.get('/about', routes.views.about );
 
   app.post('/contact', function(req, res){
-    req.flash('warning', 'This functionality is coming soon. Please email me instead. Thanks');
-    res.redirect('/about')
-  })
 
+    const body = req.body;
+
+    res.locals.data = body;
+
+    const contactInfo = {
+      name: {
+        first: body.firstName,
+        last: body.lastName
+      },
+      email: body.email,
+      description: body.description
+    };
+
+    async.series([ function(cb){
+        // check for empty values
+        const hasNoMissingFields = !(!!body.firstName && body.lastName && body.email && body.description);
+
+        cb( hasNoMissingFields );
+
+      }, function(cb){
+
+        const contactMessage = keystone.list('Contact').model( contactInfo );
+
+        contactMessage.save(cb);
+
+      }], function(err, results){
+
+        if( err ){
+          req.flash('error', 'Sorry! There was a problem in your form please try again.');
+          res.redirect('/contact-us');
+        } else {
+          req.flash('success','Thanks for contacting me! Ill get back to you as soon as possible');
+          res.redirect('/');
+        }
+
+    });
+
+  });
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);

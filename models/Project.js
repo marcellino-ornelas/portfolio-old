@@ -5,6 +5,7 @@ var Types = keystone.Field.Types;
  * Project Model
  * ==========
  */
+
 const DEFAULT_PIC = "http://www.artconnect.com/assets/default/default_project_list-7c7cb913cb130a76c51f21509f73bbb6.png";
 
 var Project = new keystone.List('Project');
@@ -29,7 +30,7 @@ Project.add({
   name: { type: Types.Text, required: true },
   description: { type: Types.Textarea },
   picture: { type: Types.File, storage: storage },
-}, "Project Links",{
+}, "Project Links", {
   github: { type: Types.Url },
   website: { type: Types.Url }
 });

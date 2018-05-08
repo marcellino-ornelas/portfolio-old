@@ -11,20 +11,19 @@ exports = module.exports = function (req, res) {
   locals.section = 'projects';
 
   Project.model.find()
-      .exec()
-      .then(function( projects ){
-        console.log(projects[0])
-        locals.projects = projects;
-        view.render('projects/index');
+    .exec()
+    .then(function( projects ){
 
-      })
-      .catch(function(err){
+      locals.projects = projects;
+      view.render('projects/index');
 
-        console.log(err)
-        req.flash('err','something went wrong')
-        res.redirect('/');
+    })
+    .catch(function(err){
+      console.log(err)
+      req.flash('error','something went wrong')
+      res.redirect('/');
 
-      })
+    })
 
 
   // Render the view
