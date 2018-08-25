@@ -30,22 +30,46 @@ keystone.pre('render', middleware.flashMessages);
 
 // Import Route Controllers
 const routes = {
-	views: importRoutes('./views'),
+  views: importRoutes('./views')
 };
 
 // Setup Route Bindings
-exports = module.exports = function (app) {
+exports = module.exports = function(app) {
+  app.use(middleware.loadMyProfile);
 
-  app.use( middleware.loadMyProfile );
+  app.get('/react', function(req, res) {
+    res.end(`\
+      <!doctype html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+        
+        <!--[if lt IE 9]>
+          <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+          <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+      </head>
+      <body>
+
+        <div id='App'></div>
+
+        <script src="/dist/bundle.js"></script>
+      </body>
+      </html>\  
+    `);
+  });
 
   // Views
-	app.get('/', routes.views.index );
-  app.get('/projects', routes.views.projects );
-  app.get('/contact-us', routes.views.contact );
-  app.get('/about', routes.views.about );
+  app.get('/', routes.views.index);
+  app.get('/projects', routes.views.projects);
+  app.get('/contact-us', routes.views.contact);
+  app.get('/about', routes.views.about);
 
-  app.post('/contact', function(req, res){
-
+  app.post('/contact', function(req, res) {
     const body = req.body;
 
     res.locals.data = body;
@@ -59,33 +83,43 @@ exports = module.exports = function (app) {
       description: body.description
     };
 
-    async.series([ function(cb){
-        // check for empty values
-        const hasNoMissingFields = !(!!body.firstName && body.lastName && body.email && body.description);
+    async.series(
+      [
+        function(cb) {
+          // check for empty values
+          const hasNoMissingFields = !(
+            !!body.firstName &&
+            body.lastName &&
+            body.email &&
+            body.description
+          );
 
-        cb( hasNoMissingFields );
+          cb(hasNoMissingFields);
+        },
+        function(cb) {
+          const contactMessage = keystone.list('Contact').model(contactInfo);
 
-      }, function(cb){
-
-        const contactMessage = keystone.list('Contact').model( contactInfo );
-
-        contactMessage.save(cb);
-
-      }], function(err, results){
-
-        if( err ){
-          req.flash('error', 'Sorry! There was a problem in your form please try again.');
+          contactMessage.save(cb);
+        }
+      ],
+      function(err, results) {
+        if (err) {
+          req.flash(
+            'error',
+            'Sorry! There was a problem in your form please try again.'
+          );
           res.redirect('/contact-us');
         } else {
-          req.flash('success','Thanks for contacting me! Ill get back to you as soon as possible');
+          req.flash(
+            'success',
+            'Thanks for contacting me! Ill get back to you as soon as possible'
+          );
           res.redirect('/');
         }
-
-    });
-
+      }
+    );
   });
 
-	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-	// app.get('/protected', middleware.requireUser, routes.views.protected);
-
+  // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
+  // app.get('/protected', middleware.requireUser, routes.views.protected);
 };

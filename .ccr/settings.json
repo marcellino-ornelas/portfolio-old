@@ -1,0 +1,7 @@
+{
+  "css": false,
+  "index": true,
+  "cssType":"css",
+  "templates": true,
+  "extendCwd": "client/src/components"
+}
