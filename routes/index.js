@@ -68,9 +68,15 @@ exports = module.exports = function(app) {
   // app.get('/projects', routes.views.projects);
   // app.get('/contact-us', routes.views.contact);
   // app.get('/about', routes.views.about);
+  app.get('/my-profile', function(req, res) {
+    // take out password
+    res.json(res.locals.admin);
+  });
+
   app.get('*', function(req, res) {
     res.redirect('/');
   });
+
   app.post('/contact', function(req, res) {
     const body = req.body;
 

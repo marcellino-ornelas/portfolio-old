@@ -1,6 +1,7 @@
 import React, { Component, PureComponent } from 'react';
 import { Route, Link, Switch, NavLink } from 'react-router-dom';
 import { NavigationDrawer } from 'react-md';
+import axios from 'axios';
 
 import Nav from '../Nav';
 import Footer from '../Footer';
@@ -40,13 +41,22 @@ const routes = [
 ];
 
 class App extends Component {
-  // constructor(props){
-  // super(props);
-  // this.state = {};
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      profile: {}
+    };
+  }
 
   // componentWillMount(){}
-  // componentDidMount(){}
+  componentDidMount() {
+    axios('/my-profile')
+      .then(res => {
+        console.log(res.data);
+        this.setState({ profile: res.data });
+      })
+      .catch(err => console.log(err));
+  }
   // componentWillUnmount(){}
 
   // componentWillReceiveProps(){}
@@ -54,11 +64,11 @@ class App extends Component {
   // componentWillUpdate(){}
   // componentDidUpdate(){}
   render() {
-    const navLinks = routes.map(route => (
-      <NavLink to={route.to} key={route.to}>
-        {route.name}
-      </NavLink>
-    ));
+    // const navLinks = routes.map(route => (
+    //   <NavLink to={route.to} key={route.to}>
+    //     {route.name}
+    //   </NavLink>
+    // ));
 
     return (
       <div>
@@ -67,7 +77,13 @@ class App extends Component {
         <main>
           <Switch>
             <Route path="/projects" exact component={Projects} />
-            <Route path="/about-me" exact component={AboutMe} />
+            <Route
+              path="/about-me"
+              exact
+              render={props => (
+                <AboutMe {...props} profile={this.state.profile} />
+              )}
+            />
             <Route path="/contact-me" exact component={ContactMe} />
             <Route path="/" exact component={() => <div>Home</div>} />
             <Route render={() => <div>404: No route found</div>} />
