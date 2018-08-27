@@ -37,38 +37,40 @@ const routes = {
 exports = module.exports = function(app) {
   app.use(middleware.loadMyProfile);
 
-  app.get('/react', function(req, res) {
-    res.end(`\
-      <!doctype html>
-      <html>
-      <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <!-- <link rel="stylesheet" href="styles.css"> -->
-        
-        <!--[if lt IE 9]>
-          <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
-          <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-      </head>
-      <body>
+  // app.get('/react', function(req, res) {
+  //   res.end(`\
+  //     <!doctype html>
+  //     <html>
+  //     <head>
+  //       <meta charset="utf-8">
+  //       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  //       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  //       <title></title>
+  //       <!-- <link rel="stylesheet" href="styles.css"> -->
 
-        <div id='App'></div>
+  //       <!--[if lt IE 9]>
+  //         <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
+  //         <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+  //       <![endif]-->
+  //     </head>
+  //     <body>
 
-        <script src="/dist/bundle.js"></script>
-      </body>
-      </html>\  
-    `);
-  });
+  //       <div id='App'></div>
+
+  //       <script src="/dist/bundle.js"></script>
+  //     </body>
+  //     </html>\
+  //   `);
+  // });
 
   // Views
   app.get('/', routes.views.index);
-  app.get('/projects', routes.views.projects);
-  app.get('/contact-us', routes.views.contact);
-  app.get('/about', routes.views.about);
-
+  // app.get('/projects', routes.views.projects);
+  // app.get('/contact-us', routes.views.contact);
+  // app.get('/about', routes.views.about);
+  app.get('*', function(req, res) {
+    res.redirect('/');
+  });
   app.post('/contact', function(req, res) {
     const body = req.body;
 
