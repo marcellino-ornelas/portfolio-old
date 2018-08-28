@@ -32,7 +32,7 @@ body {
   flex-direction: column;
 }
 
-a{ color: @link-color}
+  a{ color: @link-color}
 
 h1{ font-size: 2em }
 h2{ font-size: 1.8em }
@@ -40,6 +40,11 @@ h3{ font-size: 1.6em }
 h4{ font-size: 1.4em }
 h5{ font-size: 1.2em }
 p,h6{ font-size: 1em }
+
+
+p, li, span, a {
+  font-family: 'Roboto', sans-serif;
+}
 
 ul {
   list-style: none;
@@ -83,12 +88,42 @@ main{
   flex: 1 0 auto;
 }
 
-/* About */
-.about-us .collection{
+
+/* Home Page */
+
+.home img {
+  opacity: 0.7
+}
+
+.caption {
+  height: 60%;
+  margin-left: 50px;
+}
+
+.home .contact-me{
+  display: flex;
+}
+
+// .home .contact-me > div{
+//   flex: 0 0 auto;
+// }
+
+// .home .contact-me-link{
+//   flex: 1 0 auto;
+// }
+
+@media screen and (max-width:630px){
+  .home .contact-me {
+    display: block;
+  }
+}
+
+/* About Page*/
+.about-me .collection{
   border: none;
 }
 
-.about-us .header{
+.about-me .header{
   align-items: center;
   flex-wrap: wrap;
   > *{
@@ -100,25 +135,13 @@ main{
   }
 }
 
-.about-us .social a{
+.about-me .social a{
   color: inherit;
 }
 
-// .social-list {
+.about-me {
 
-//   .social-item {
-//     display: flex;
-//     padding: 1em 0;
-//   }
-//    .social-item:nth-child(1n+1){
-//     border-top: 1px solid grey;
-//    }
-
-//   .social-item-brand{
-//     flex: 1 0 auto;
-//     margin: 0;
-//   }
-// }
+}
 
 
 /* Footer */

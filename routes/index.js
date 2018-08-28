@@ -35,33 +35,7 @@ const routes = {
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
-  app.use(middleware.loadMyProfile);
-
-  // app.get('/react', function(req, res) {
-  //   res.end(`\
-  //     <!doctype html>
-  //     <html>
-  //     <head>
-  //       <meta charset="utf-8">
-  //       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  //       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  //       <title></title>
-  //       <!-- <link rel="stylesheet" href="styles.css"> -->
-
-  //       <!--[if lt IE 9]>
-  //         <script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js"></script>
-  //         <script src="https://cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
-  //       <![endif]-->
-  //     </head>
-  //     <body>
-
-  //       <div id='App'></div>
-
-  //       <script src="/dist/bundle.js"></script>
-  //     </body>
-  //     </html>\
-  //   `);
-  // });
+  // app.use(middleware.loadMyProfile);
 
   // Views
   app.get('/', routes.views.index);
@@ -70,7 +44,23 @@ exports = module.exports = function(app) {
   // app.get('/about', routes.views.about);
   app.get('/my-profile', function(req, res) {
     // take out password
-    res.json(res.locals.admin);
+
+    Promise.all([
+      keystone
+        .list('User')
+        .model.findOne({ isAdmin: true })
+        .exec(),
+      keystone
+        .list('Project')
+        .model.find()
+        .exec()
+    ]).then(function(results) {
+      const profile = results[0];
+      const projects = results[1];
+      // projects[0].toObject();
+
+      res.json({ profile, projects });
+    });
   });
 
   app.get('*', function(req, res) {

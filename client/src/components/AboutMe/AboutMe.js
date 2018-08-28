@@ -20,7 +20,7 @@ class AboutMe extends Component {
   render() {
     return (
       <div>
-        <div className="about-us section">
+        <div className="about-me section">
           <div className="row">
             <div className="col s12 m12 l3">
               <div className="center-align">
@@ -52,17 +52,17 @@ class AboutMe extends Component {
                   <SocialLinks profile={this.props.profile} />
                 </div>
               </div>
-            </div>
-            <div className="divider" />
-            <div className="row">
-              <div className="s12">
-                <p className="flow-text">
-                  I am a highly efficient and hardworking with a “can do”
-                  attitude Full Stack Web Developer that has grasped a deep
-                  understanding of web development. Possessing a positive team
-                  spirit, deadline orientated and has the ability to produce
-                  outstanding results.
-                </p>
+              <div className="divider" />
+              <div className="row">
+                <div className="s12">
+                  <p className="flow-text">
+                    I am a highly efficient and hardworking with a “can do”
+                    attitude Full Stack Web Developer that has grasped a deep
+                    understanding of web development. Possessing a positive team
+                    spirit, deadline orientated and has the ability to produce
+                    outstanding results.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
