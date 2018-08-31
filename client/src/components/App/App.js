@@ -44,7 +44,7 @@ class App extends Component {
   // componentDidUpdate(){}
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Nav />
         <main>
           <Switch>
@@ -87,7 +87,7 @@ class App extends Component {
             <Route render={() => <div>404: No route found</div>} />
           </Switch>
         </main>
-      </div>
+      </React.Fragment>
     );
   }
 }

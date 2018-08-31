@@ -38,19 +38,4 @@ class Projects extends Component {
   }
 }
 
-/*each project in projects
-  .col.s12.m6.l4: .card
-    .card-image
-      img(src=project.pictureURL)
-      span.card-title= project.name
-      a.btn-floating.btn-large.halfway-fab.waves-effect.waves-light.red(
-        href=project.preview
-        target='_blank'
-      )
-        i.material-icons.fa.fa-search-plus(aria-hidden="true")
-    .card-content.truncate-text
-      p= project.description
-else
-  h2 No projects at this time*/
-
 export default Projects;

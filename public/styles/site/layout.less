@@ -19,30 +19,54 @@ Author: Your Name
 /* BASE STYLES
 /*******************************************/
 
+html,
+body {
+  height: 100%;
+}
+
+// .about-me .side-nav + div{
+//   padding-left: 240px; }
+
+// @media only screen and (max-width : 992px) {
+//   .about-me .side-nav + div {
+//     padding-left: 0; }
+//  }
+
 body {
   font-size: @font-size-base;
   line-height: 1.4;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  min-height:100%;
+  min-height: 100%;
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+a {
+  color: @link-color;
 }
 
-  a{ color: @link-color}
+h1 {
+  font-size: 2em;
+}
+h2 {
+  font-size: 1.8em;
+}
+h3 {
+  font-size: 1.6em;
+}
+h4 {
+  font-size: 1.4em;
+}
+h5 {
+  font-size: 1.2em;
+}
+p,
+h6 {
+  font-size: 1em;
+}
 
-h1{ font-size: 2em }
-h2{ font-size: 1.8em }
-h3{ font-size: 1.6em }
-h4{ font-size: 1.4em }
-h5{ font-size: 1.2em }
-p,h6{ font-size: 1em }
-
-
-p, li, span, a {
+p,
+li,
+span,
+a {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -50,7 +74,7 @@ ul {
   list-style: none;
 }
 
-.validate.error{
+.validate.error {
   border-bottom-color: red !important;
   box-shadow: 0 1px 0 0 red !important;
 }
@@ -64,35 +88,37 @@ ul {
 }
 
 img {
-  width: 250px;
+  max-width: 250px;
 }
-
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 
+#app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Header */
 
-header{
-  nav{
+header {
+  nav {
     padding: 0px 1%;
     background-color: @nav-color;
   }
 }
 
-
 /* Main */
 
-main{
+main {
   flex: 1 0 auto;
 }
 
-
 /* Home Page */
-
 .home img {
-  opacity: 0.7
+  opacity: 0.7;
 }
 
 .caption {
@@ -100,7 +126,7 @@ main{
   margin-left: 50px;
 }
 
-.home .contact-me{
+.home .contact-me {
   display: flex;
 }
 
@@ -112,38 +138,40 @@ main{
 //   flex: 1 0 auto;
 // }
 
-@media screen and (max-width:630px){
+@media screen and (max-width: 630px) {
   .home .contact-me {
     display: block;
   }
 }
 
 /* About Page*/
-.about-me .collection{
+.about-me .collection {
   border: none;
 }
 
-.about-me .header{
+.about-me .header {
   align-items: center;
   flex-wrap: wrap;
-  > *{
-    padding-top: .5em;
+  > * {
+    padding-top: 0.5em;
   }
-  h3{
+  h3 {
     margin: 0;
     flex: 2 0 auto;
   }
 }
 
-.about-me .social a{
+.about-me .social a {
   color: inherit;
 }
 
-.about-me {
-
+.about-me .profile-pic {
+  max-width: 200px;
 }
 
-
+.about-me .profile-name {
+  margin: 0;
+}
 /* Footer */
 
 footer {
@@ -164,15 +192,14 @@ footer {
  * flex
 */
 
-.fx{
+.fx {
   display: flex;
 }
 
-
-.social{
+.social {
   justify-content: space-between;
   flex: 1 0 auto;
-  a{
+  a {
     color: white;
     margin-right: 10px;
     margin-left: 10px;
@@ -189,27 +216,26 @@ footer {
   padding: 20px 10px;
   // width: 75%;
   margin: 10px auto;
-
 }
 
-.message.info{
-  color:#03a9f4;
-  background-color:#e1f5fe;
+.message.info {
+  color: #03a9f4;
+  background-color: #e1f5fe;
 }
 
-.message.success{
-  color:#4caf50;
-  background-color:#c8e6c9;
+.message.success {
+  color: #4caf50;
+  background-color: #c8e6c9;
 }
 
-.message.warning{
-  color:#ff9800;
-  background-color:#ffe0b2;
+.message.warning {
+  color: #ff9800;
+  background-color: #ffe0b2;
 }
 
-.message.error{
+.message.error {
   color: #f44336;
-  background-color:#ffebee;
+  background-color: #ffebee;
 }
 
 /*
@@ -219,12 +245,12 @@ footer {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  p{
+  p {
     overflow: hidden;
   }
 }
 
-.error{
+.error {
   font-size: 14px;
   color: red;
 }

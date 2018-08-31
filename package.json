@@ -5,6 +5,7 @@
   "dependencies": {
     "async": "^2.1.4",
     "axios": "^0.18.0",
+    "classnames": "^2.2.6",
     "dotenv": "4.0.0",
     "font-awesome": "^4.7.0",
     "joi": "^13.6.0",
