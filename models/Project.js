@@ -30,12 +30,17 @@ Project.add(
   {
     name: { type: Types.Text, required: true },
     description: { type: Types.Textarea },
-    picture: { type: Types.File, storage: storage }
+    picture: { type: Types.File, storage: storage },
+    createAt: { type: Types.Date, default: Date.now }
   },
   'Project Links',
   {
     github: { type: Types.Url },
     website: { type: Types.Url }
+  },
+  'Technologies used',
+  {
+    technologies: { type: Types.Relationship, ref: 'Software', many: true }
   }
 );
 
@@ -43,5 +48,5 @@ Project.add(
  * Registration
  */
 
-Project.defaultColumns = 'name';
+Project.defaultColumns = 'name, ';
 Project.register();
