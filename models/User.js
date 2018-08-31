@@ -21,6 +21,10 @@ User.add(
     linkedIn: { type: Types.Url, label: 'Linked In' },
     website: { type: Types.Url, label: ' My Website' }
   },
+  'Software skills',
+  {
+    skills: { type: Types.Relationship, ref: 'Software', many: true }
+  },
   'Permissions',
   {
     isAdmin: { type: Boolean, label: 'Can access Keystone', index: true }

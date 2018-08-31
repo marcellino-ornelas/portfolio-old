@@ -39,18 +39,6 @@ Project.add(
   }
 );
 
-// Project.schema.virtual('pictureURL').get(function() {
-//   return (this.picture || {}).url || DEFAULT_PIC;
-// });
-
-// Project.schema.virtual('preview').get(function() {
-//   return this.website || this.github;
-// });
-
-// Project.schema.virtual('url').get(function() {
-//   return '/projects/' + this._id;
-// });
-
 /**
  * Registration
  */
