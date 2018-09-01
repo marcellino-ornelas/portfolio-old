@@ -17,10 +17,9 @@ Software.add({
     type: Types.Select,
     options: 'Database, Software language, Software tool, Library/Framework',
     required: true,
-    initial: true,
-    default: 1
+    initial: true
   },
-  years: { type: Number, validateRequiredInput: true }
+  years: { type: Number, default: 1 }
 });
 
 /**
