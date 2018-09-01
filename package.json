@@ -8,6 +8,7 @@
     "classnames": "^2.2.6",
     "dotenv": "4.0.0",
     "font-awesome": "^4.7.0",
+    "history": "^4.7.2",
     "joi": "^13.6.0",
     "keystone": "^4.0.0",
     "keystone-storage-adapter-s3": "^1.1.1",
@@ -15,6 +16,7 @@
     "pug": "2.0.0-beta11",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-ga": "^2.5.3",
     "react-md": "^1.5.0",
     "react-router-dom": "^4.3.1"
   },
