@@ -2,19 +2,11 @@ import React, { Component } from 'react';
 import { Link as NavLink } from 'react-router-dom';
 
 class Nav extends Component {
-  // constructor(props){
-  // super(props);
-  // this.state = {};
-  // }
-
-  // componentWillMount(){}
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
   // componentDidMount(){}
-  // componentWillUnmount(){}
-
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
 
   render() {
     const isAdmin = false;
