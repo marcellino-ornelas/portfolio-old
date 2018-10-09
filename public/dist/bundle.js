@@ -134,6 +134,30 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 
 /***/ }),
 
+/***/ "./client/src/components/Background/Background.js":
+/*!********************************************************!*\
+  !*** ./client/src/components/Background/Background.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Background = function Background(props) {\n  return _react2.default.createElement(\n    \"div\",\n    { className: \"bg\" },\n    _react2.default.createElement(\"img\", { className: \"bg-img\", src: props.img, alt: \"\" }),\n    _react2.default.createElement(\n      \"section\",\n      { className: \"bg-content valign\" },\n      _react2.default.createElement(\n        \"div\",\n        { className: \"bg-content-center\" },\n        props.children\n      )\n    )\n  );\n};\n\nexports.default = Background;\n\n//# sourceURL=webpack:///./client/src/components/Background/Background.js?");
+
+/***/ }),
+
+/***/ "./client/src/components/Background/index.js":
+/*!***************************************************!*\
+  !*** ./client/src/components/Background/index.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _Background = __webpack_require__(/*! ./Background.js */ \"./client/src/components/Background/Background.js\");\n\nObject.defineProperty(exports, 'default', {\n  enumerable: true,\n  get: function get() {\n    return _interopRequireDefault(_Background).default;\n  }\n});\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n//# sourceURL=webpack:///./client/src/components/Background/index.js?");
+
+/***/ }),
+
 /***/ "./client/src/components/ContactMe/ContactMe.js":
 /*!******************************************************!*\
   !*** ./client/src/components/ContactMe/ContactMe.js ***!
@@ -190,7 +214,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Home = function Home(props) {\n  var name = props.profile.name || {};\n  return _react2.default.createElement(\n    'div',\n    { className: 'home' },\n    _react2.default.createElement(\n      'div',\n      { className: 'parallax-container valign-wrapper' },\n      _react2.default.createElement(\n        'div',\n        { className: 'parallax' },\n        _react2.default.createElement('img', { src: '/images/computer.jpg', alt: '' })\n      ),\n      _react2.default.createElement(\n        'section',\n        { className: 'white-text caption' },\n        _react2.default.createElement(\n          'h1',\n          { className: 'header' },\n          name.first,\n          ' ',\n          name.last\n        ),\n        _react2.default.createElement(\n          'h4',\n          null,\n          props.profile.caption\n        )\n      )\n    ),\n    _react2.default.createElement(\n      'div',\n      { className: 'section white' },\n      _react2.default.createElement(\n        'div',\n        { className: 'row container' },\n        _react2.default.createElement(\n          'div',\n          { className: 'valign-wrapper contact-me' },\n          _react2.default.createElement(\n            'div',\n            { className: 'contact-me-intro' },\n            _react2.default.createElement(\n              'h3',\n              null,\n              ' Want your own website?'\n            ),\n            _react2.default.createElement(\n              'p',\n              { className: 'flow-text' },\n              'Get your dreams to come to life and contact me today for your free quote'\n            )\n          ),\n          _react2.default.createElement(\n            'div',\n            { className: 'center-align container' },\n            _react2.default.createElement(\n              _reactRouterDom.Link,\n              {\n                to: '/contact-us',\n                className: 'btn waves-effect waves-light'\n              },\n              'Contact Us'\n            )\n          )\n        )\n      )\n    )\n  );\n};\n\nexports.default = Home;\n\n//# sourceURL=webpack:///./client/src/components/Home/Home.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/es/index.js\");\n\nvar _Background = __webpack_require__(/*! ../Background/ */ \"./client/src/components/Background/index.js\");\n\nvar _Background2 = _interopRequireDefault(_Background);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Home = function Home(props) {\n  var name = props.profile.name || {};\n  return _react2.default.createElement(\n    'div',\n    { className: 'root home' },\n    _react2.default.createElement(\n      _Background2.default,\n      { img: '/images/computer.jpg' },\n      _react2.default.createElement(\n        'h1',\n        { className: 'header' },\n        name.first,\n        ' ',\n        name.last\n      ),\n      _react2.default.createElement(\n        'h4',\n        null,\n        props.profile.caption\n      )\n    ),\n    _react2.default.createElement(\n      'div',\n      { className: 'section' },\n      _react2.default.createElement(\n        'div',\n        { className: 'container' },\n        _react2.default.createElement(\n          'div',\n          { className: 'valign contact-me' },\n          _react2.default.createElement(\n            'div',\n            { className: 'contact-me-intro' },\n            _react2.default.createElement(\n              'h3',\n              null,\n              ' Want your own website?'\n            ),\n            _react2.default.createElement(\n              'p',\n              { className: 'flow-text' },\n              'Get your dreams to come to life and contact me today for your free quote'\n            )\n          ),\n          _react2.default.createElement(\n            'div',\n            { className: 'center-align container' },\n            _react2.default.createElement(\n              _reactRouterDom.Link,\n              {\n                to: '/contact-us',\n                className: 'btn waves-effect waves-light'\n              },\n              'Contact Us'\n            )\n          )\n        )\n      )\n    )\n  );\n};\n\nexports.default = Home;\n\n//# sourceURL=webpack:///./client/src/components/Home/Home.js?");
 
 /***/ }),
 

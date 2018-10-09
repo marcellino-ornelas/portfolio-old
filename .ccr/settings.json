@@ -1,7 +1,10 @@
 {
-  "css": false,
-  "index": true,
-  "cssType":"css",
-  "templates": true,
-  "extendCwd": "client/src/components"
+	"test": false,
+	"css": false,
+	"index": true,
+	"default": true,
+	"cssType": "css",
+	"templates": true,
+	"extendCwd": "./client/src/components",
+	"verbose": false
 }

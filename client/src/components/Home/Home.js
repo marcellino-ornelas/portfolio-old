@@ -1,24 +1,20 @@
 import React, { Component } from 'react';
 import { Link as NavLink } from 'react-router-dom';
+import Background from '../Background/';
 
 const Home = props => {
   const name = props.profile.name || {};
   return (
-    <div className="home">
-      <div className="parallax-container valign-wrapper">
-        <div className="parallax">
-          <img src="/images/computer.jpg" alt="" />
-        </div>
-        <section className="white-text caption">
-          <h1 className="header">
-            {name.first} {name.last}
-          </h1>
-          <h4>{props.profile.caption}</h4>
-        </section>
-      </div>
-      <div className="section white">
-        <div className="row container">
-          <div className="valign-wrapper contact-me">
+    <div className="root home">
+      <Background img="/images/computer.jpg">
+        <h1 className="header">
+          {name.first} {name.last}
+        </h1>
+        <h4>{props.profile.caption}</h4>
+      </Background>
+      <div className="section">
+        <div className="container">
+          <div className="valign contact-me">
             <div className="contact-me-intro">
               <h3> Want your own website?</h3>
               <p className="flow-text">
@@ -37,11 +33,6 @@ const Home = props => {
           </div>
         </div>
       </div>
-      {/*<div className="parallax-container">
-        <div className="parallax">
-          <img src="/images/coding.jpg" alt="" />
-        </div>
-      </div>*/}
     </div>
   );
 };

@@ -24,14 +24,6 @@ body {
   height: 100%;
 }
 
-// .about-me .side-nav + div{
-//   padding-left: 240px; }
-
-// @media only screen and (max-width : 992px) {
-//   .about-me .side-nav + div {
-//     padding-left: 0; }
-//  }
-
 body {
   font-size: @font-size-base;
   line-height: 1.4;
@@ -96,7 +88,6 @@ img {
 /*******************************************/
 
 #app {
-  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -114,11 +105,7 @@ header {
 
 main {
   flex: 1 0 auto;
-}
-
-/* Home Page */
-.home img {
-  opacity: 0.7;
+  height: 100%;
 }
 
 .caption {
@@ -129,14 +116,6 @@ main {
 .home .contact-me {
   display: flex;
 }
-
-// .home .contact-me > div{
-//   flex: 0 0 auto;
-// }
-
-// .home .contact-me-link{
-//   flex: 1 0 auto;
-// }
 
 @media screen and (max-width: 630px) {
   .home .contact-me {
@@ -188,12 +167,55 @@ footer {
 /* ADDITIONAL STYLES
 /*******************************************/
 
+.root,
+.inherit {
+  height: inherit;
+}
+
 /*
  * flex
 */
-
 .fx {
   display: flex;
+}
+
+.section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.valign {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+/*
+ * background section w/ img
+*/
+.bg {
+  height: 580px;
+  color: white;
+
+  .bg-img {
+    width: 100%;
+    height: inherit;
+    position: absolute;
+    z-index: 0;
+    opacity: 0.7;
+  }
+
+  .bg-content {
+    position: relative;
+    z-index: 1;
+    padding: 10px 5%;
+    height: inherit;
+  }
 }
 
 .social {
@@ -253,4 +275,42 @@ footer {
 .error {
   font-size: 14px;
   color: red;
+}
+
+// desktop
+@media all and (max-width: 1024px) {
+  .bg {
+    height: 480px;
+  }
+}
+
+// tablet
+@media all and (max-width: 839px) {
+  body {
+    font-size: @font-size-tablet;
+  }
+
+  .bg {
+    height: 380px;
+  }
+}
+
+// mobile
+@media all and (max-width: 480px) {
+  body {
+    font-size: @font-size-mobile;
+  }
+
+  .bg {
+    height: 280px;
+    color: #545454;
+
+    .bg-img {
+      opacity: 0.3;
+    }
+
+    .bg-content {
+      text-align: center;
+    }
+  }
 }

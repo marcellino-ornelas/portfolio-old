@@ -1,0 +1,7 @@
+import React, { Component } from 'react';
+
+const {{= it.component.name}} = (props) => {
+  return (<div></div>);
+}
+
+export default {{= it.component.name}};
