@@ -1,26 +1,23 @@
 import React, { Component } from 'react';
 import Project from './Project/';
+import { observer, inject } from 'mobx-react';
 
+@inject('groceryStore')
+@observer
 class Projects extends Component {
-  // constructor(props){
-  // super(props);
-  // this.state = {};
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-  // componentWillMount(){}
   // componentDidMount(){}
-  // componentWillUnmount(){}
-
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
 
   render() {
-    const projects = !this.props.projects.length ? (
+    const store = this.props.userStore;
+    const projects = !store.projects.length ? (
       <div>Loading....</div>
     ) : (
-      this.props.projects.map((project, index) => {
+      store.projects.map((project, index) => {
         return <Project project={project} key={index} />;
       })
     );

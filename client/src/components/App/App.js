@@ -2,6 +2,11 @@ import React, { Component, PureComponent } from 'react';
 import { Route, Link, Switch, NavLink } from 'react-router-dom';
 import { NavigationDrawer } from 'react-md';
 import axios from 'axios';
+import { observer, inject } from 'mobx-react';
+
+/*
+ * Components 
+*/
 
 import Nav from '../Nav';
 import Footer from '../Footer';
@@ -16,6 +21,7 @@ import Projects from '../Projects';
 import ContactMe from '../ContactMe';
 import Home from '../Home/';
 
+@inject('userStore')
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,24 +31,22 @@ class App extends Component {
     };
   }
 
-  // componentWillMount(){}
   componentDidMount() {
-    axios('/my-profile')
-      .then(res => {
-        console.log(res.data);
-        this.setState({
-          profile: res.data.profile,
-          projects: res.data.projects
-        });
-      })
-      .catch(err => console.log(err));
+    // axios('/my-profile')
+    //   .then(res => {
+    //     console.log(res.data);
+    //     this.setState({
+    //       profile: res.data.profile,
+    //       projects: res.data.projects
+    //     });
+    //   })
+    //   .catch(err => console.log(err));
+    const store = this.props.userStore;
+    store.fetchProfile();
   }
-  // componentWillUnmount(){}
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
+
   render() {
+    const store = this.props.userStore;
     return (
       <React.Fragment>
         <Nav />
@@ -52,10 +56,10 @@ class App extends Component {
               path="/projects"
               exact
               render={props =>
-                !this.state.projects.length ? (
+                !store.projects.length ? (
                   <Loading />
                 ) : (
-                  <Projects {...props} projects={this.state.projects} />
+                  <Projects {...props} projects={store.projects} />
                 )
               }
             />
@@ -63,10 +67,10 @@ class App extends Component {
               path="/about-me"
               exact
               render={props =>
-                !this.state.profile ? (
+                !store.profile ? (
                   <Loading />
                 ) : (
-                  <AboutMe {...props} profile={this.state.profile} />
+                  <AboutMe {...props} profile={store.profile} />
                 )
               }
             />
@@ -74,15 +78,7 @@ class App extends Component {
             <Route
               path="/"
               exact
-              render={
-                props => (
-                  // !this.state.profile ? (
-                  //   <Loading />
-                  // ) : (
-                  <Home {...props} profile={this.state.profile} />
-                )
-                // )
-              }
+              render={props => <Home {...props} profile={store.profile} />}
             />
             <Route render={() => <div>404: No route found</div>} />
           </Switch>
