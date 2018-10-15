@@ -23,6 +23,8 @@ class App extends Component {
       profile: {},
       projects: []
     };
+
+    this.$mainContainer = React.createRef();
   }
 
   // componentWillMount(){}
@@ -37,16 +39,12 @@ class App extends Component {
       })
       .catch(err => console.log(err));
   }
-  // componentWillUnmount(){}
-  // componentWillReceiveProps(){}
-  // shouldComponentUpdate(){}
-  // componentWillUpdate(){}
-  // componentDidUpdate(){}
+
   render() {
     return (
       <React.Fragment>
         <Nav />
-        <main>
+        <main ref={this.$mainContainer}>
           <Switch>
             <Route
               path="/projects"

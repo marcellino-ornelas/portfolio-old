@@ -1,83 +1,56 @@
 import React, { Component } from 'react';
 import { Link as NavLink } from 'react-router-dom';
+import NavList from './NavList/';
+import classnames from 'classnames';
 
 class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      openSideBar: false
+    };
+
+    this.openSideBar = this.openSideBar.bind(this);
+    this.closeSideBar = this.closeSideBar.bind(this);
   }
+
+  openSideBar(e) {
+    this.setState({
+      openSideBar: true
+    });
+
+    document.body.classList.add('contain');
+  }
+
+  closeSideBar(e) {
+    this.setState({
+      openSideBar: false
+    });
+
+    document.body.classList.remove('contain');
+  }
+
   // componentDidMount(){}
 
   render() {
     const isAdmin = false;
+
+    const sideBarClasses = classnames('side-nav', {
+      open: this.state.openSideBar
+    });
+
     return (
       <header id="header">
-        <div className="nav">
-          <div className="navbar-fixed">
-            <nav>
-              <div className="nav-wrapper">
-                <NavLink to="/" className="brand-logo">
-                  MO
-                </NavLink>
-                <a
-                  href="#"
-                  className="button-collapse"
-                  data-activates="mobile-demo"
-                >
-                  <i className="material-icons fa fa-bars" />
-                </a>
-                <ul className="right hide-on-med-and-down">
-                  <li>
-                    <NavLink to="/"> Home</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/projects"> Projects</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/contact-me"> Contact Me</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/about-me"> About Me</NavLink>
-                  </li>
-                  {isAdmin && (
-                    <React.Fragment>
-                      <li>
-                        <NavLink to="/keystone"> Admin</NavLink>
-                      </li>
-                      <li>
-                        <NavLink to="/keystone/signout"> Sign Out</NavLink>
-                      </li>
-                    </React.Fragment>
-                  )}
-                </ul>
-              </div>
-            </nav>
+        <nav>
+          <div className="mobile-trigger" onClick={this.openSideBar}>
+            <i className="material-icons fa fa-bars" />
           </div>
+          <NavList />
+        </nav>
+
+        <div className={sideBarClasses} onClick={this.closeSideBar}>
+          <NavList />
         </div>
-        <ul id="mobile-demo" className="side-nav">
-          <li>
-            <NavLink to="/"> Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/projects"> Projects</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact-me"> Contact Me</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about-me"> About Me</NavLink>
-          </li>
-          {isAdmin && (
-            <React.Fragment>
-              <li>
-                <NavLink to="/keystone"> Admin</NavLink>
-              </li>
-              <li>
-                <NavLink to="/keystone/signout"> Sign Out</NavLink>
-              </li>
-            </React.Fragment>
-          )}
-        </ul>
       </header>
     );
   }
