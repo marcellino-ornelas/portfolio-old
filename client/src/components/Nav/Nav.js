@@ -3,6 +3,13 @@ import { Link as NavLink } from 'react-router-dom';
 import NavList from './NavList/';
 import classnames from 'classnames';
 
+const OPEN_SIDE_BAR = {
+  openSideBar: true
+};
+const CLOSE_SIDE_BAR = {
+  openSideBar: false
+};
+
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -15,17 +22,15 @@ class Nav extends Component {
   }
 
   openSideBar(e) {
-    this.setState({
-      openSideBar: true
-    });
+    this.setState(OPEN_SIDE_BAR);
 
     document.body.classList.add('contain');
   }
 
   closeSideBar(e) {
-    this.setState({
-      openSideBar: false
-    });
+    if (!e.target.classList.contains('nav-list')) {
+      this.setState(CLOSE_SIDE_BAR);
+    }
 
     document.body.classList.remove('contain');
   }
