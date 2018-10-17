@@ -64,7 +64,9 @@ exports = module.exports = function(app) {
   });
 
   app.get('*', function(req, res) {
-    res.redirect('/');
+    // res.redirect('/');
+    // res.sendFile(__dirname + '../public/dist/bundle.js');
+    res.render('index');
   });
 
   app.post('/contact', function(req, res) {

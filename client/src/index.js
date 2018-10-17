@@ -12,7 +12,6 @@ ReactGA.initialize('UA-125057302-1');
 const history = createHistory();
 
 history.listen((location, action) => {
-  console.log(location);
   ReactGA.set({ page: location.pathname });
   ReactGA.pageview(location.pathname);
 });

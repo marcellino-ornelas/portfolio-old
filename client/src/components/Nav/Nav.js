@@ -30,9 +30,8 @@ class Nav extends Component {
   closeSideBar(e) {
     if (!e.target.classList.contains('nav-list')) {
       this.setState(CLOSE_SIDE_BAR);
+      document.body.classList.remove('contain');
     }
-
-    document.body.classList.remove('contain');
   }
 
   // componentDidMount(){}
@@ -54,7 +53,7 @@ class Nav extends Component {
         </nav>
 
         <div className={sideBarClasses} onClick={this.closeSideBar}>
-          <NavList />
+          <NavList sidebar={true} />
         </div>
       </header>
     );
