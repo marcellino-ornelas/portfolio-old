@@ -4,7 +4,7 @@ import { Link as NavLink } from 'react-router-dom';
 
 const NavListItem = props => {
   const iconClasses = classnames('fa', 'fa-' + props.icon);
-  const navItemClass = classnames({
+  const navItemClass = classnames('nav-list-item', {
     active: props.isActive
   });
 

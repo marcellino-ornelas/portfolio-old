@@ -1,0 +1,120 @@
+/* main navigation options. (desktop) */
+@nav-color: #90c9f9;
+@nav-text-color: white;
+@nav-active-shade: #86bae5;
+
+/* main active color for both main nav and side nav*/
+@nav-active-color: @secondary-color;
+// @side-nav-active-color: @nav-active-color;
+
+/* side navigation options. (mobile) */
+@side-nav-color: rgba(0, 0, 0, 0.7);
+@side-nav-text-color: @secondary-color;
+@side-nav-active-shade: lighten(@side-nav-text-color, 18%);
+
+/* side navigation advanced. (mobile) */
+@sidebar-item-space: 10px;
+
+/*
+ * Nav-list
+*/
+
+.nav-list {
+  i {
+    margin-right: 10px;
+  }
+
+  i,
+  a {
+    color: inherit;
+  }
+}
+
+/*
+ * Main Navigation
+*/
+nav {
+  align-items: center;
+  background-color: @nav-color;
+  color: @nav-text-color;
+  display: flex;
+  // padding: 0 5px;
+  width: 100%;
+
+  box-shadow+: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow+: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow+: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+
+  .mobile-trigger {
+    padding: 10px;
+    cursor: pointer;
+    .only-tablet;
+    i {
+      font-size: 34px;
+    }
+  }
+
+  .nav-list {
+    .no-tablet;
+    li {
+      display: inline-block;
+    }
+    a {
+      padding: 10px 15px;
+      display: block;
+    }
+
+    .active a,
+    a:hover {
+      background: linear-gradient(@nav-active-shade, @nav-color);
+      border-top: solid 3px @nav-active-color;
+    }
+  }
+}
+
+/*
+ * Side Navigation
+*/
+.side-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  background-color: @side-nav-color;
+  color: @side-nav-text-color;
+
+  &.open {
+    @media @tablet {
+      display: initial;
+    }
+  }
+
+  .nav-list {
+    min-width: 300px;
+    max-width: 400px;
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+
+    .section;
+
+    li {
+      padding-left: 10px;
+      padding-top: @sidebar-item-space;
+      padding-bottom: @sidebar-item-space;
+    }
+
+    i {
+      text-align: center;
+      width: 1em;
+    }
+  }
+
+  .active,
+  li:hover {
+    background-color: @side-nav-active-shade;
+    border-left: 5px solid @side-nav-text-color;
+  }
+}
