@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import joi from 'joi';
+import axios from 'axios';
 import classnames from 'classnames';
 
 var onlyWords = {
@@ -38,7 +38,7 @@ class ContactMe extends Component {
   }
 
   handleInputChange(e) {
-    console.log(e.target);
+    // console.log(e.target);
 
     const error = Object.assign(this.state.errors, {});
 
@@ -48,7 +48,6 @@ class ContactMe extends Component {
   }
 
   handleSubmit(e) {
-    console.log('submit');
     let formValid = true;
     let errors = {};
 
@@ -172,3 +171,21 @@ class ContactMe extends Component {
 }
 
 export default ContactMe;
+/*
+<div className="input-field col s12 m6">
+  <input
+    type="text"
+    id="last-name"
+    className={classes.lastName}
+    name="lastName"
+    value={this.state.lastName}
+    onChange={this.handleInputChange}
+  />
+  {this.state.errors.lastName ? (
+    <div className="error">{this.state.errors.lastName}</div>
+  ) : (
+    ''
+  )}
+  <label htmlFor="lastName"> Last Name</label>
+</div>;
+*/

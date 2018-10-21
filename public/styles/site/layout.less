@@ -265,6 +265,10 @@ footer {
 .btn {
   @button-color: lightblue;
 
+  border-color: transparent;
+  border-style: none;
+  font-size: 24px;
+
   background-color: @button-color;
   border-radius: 5px;
   color: white;
@@ -334,6 +338,49 @@ footer {
     color: white;
     margin-right: 10px;
     margin-left: 10px;
+  }
+}
+
+/*
+ * Form
+*/
+
+.input-field {
+  @input-active-color: @secondary-color;
+
+  font-size: 1.2em;
+  width: 100%;
+  margin-bottom: 10px;
+
+  input,
+  textarea,
+  label {
+    display: block;
+    font-size: inherit;
+    width: inherit;
+    padding: 5px 10px;
+  }
+
+  input,
+  textarea {
+    border: 0px solid transparent;
+    border-bottom: 2px solid grey;
+
+    &:focus {
+      outline: transparent;
+      border-bottom: 2px solid @input-active-color;
+    }
+  }
+
+  label {
+    display: none;
+    width: 100%;
+    position: absolute;
+    left: 0.75em;
+  }
+
+  textarea {
+    height: 4em;
   }
 }
 
