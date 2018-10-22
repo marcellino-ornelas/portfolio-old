@@ -93,14 +93,14 @@ h3 {
   font-size: 1.6em;
 }
 h4 {
-  font-size: 1.4em;
+  font-size: 1.2em;
 }
 h5 {
-  font-size: 1.2em;
+  font-size: 0.9em;
 }
 p,
 h6 {
-  font-size: 1em;
+  font-size: 0.6em;
 }
 
 p,
@@ -163,10 +163,10 @@ main {
   margin-left: 50px;
 }
 
-@import 'home.less';
-@import 'profile.less';
-// @import 'projects.less';
-// @import 'contact-me.less';
+@import 'pages/home.less';
+@import 'pages/profile.less';
+// @import 'pages/projects.less';
+// @import 'pages/contact-me.less';
 
 /* Footer */
 
@@ -374,13 +374,34 @@ footer {
 
   label {
     display: none;
-    width: 100%;
-    position: absolute;
-    left: 0.75em;
+    // width: 100%;
+    // position: absolute;
+    // left: 0.75em;
   }
 
   textarea {
     height: 4em;
+  }
+
+  &.error {
+    color: red;
+    * {
+      color: inherit;
+    }
+
+    input,
+    textarea {
+      border-color: red;
+    }
+
+    .error-message {
+      display: initial;
+    }
+  }
+
+  .error-message {
+    display: none;
+    color: red;
   }
 }
 
@@ -428,10 +449,10 @@ footer {
   }
 }
 
-.error {
-  font-size: 14px;
-  color: red;
-}
+// .error {
+//   font-size: 14px;
+//   color: red;
+// }
 
 // desktop
 // @media all and (max-width: 1024px) {

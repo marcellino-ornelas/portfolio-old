@@ -3,10 +3,7 @@ import classnames from 'classnames';
 
 import { Consumer } from '../Form.js';
 
-const DEFAULT_INPUT_TYPE = 'text';
-
-const InputField = props => {
-  const type = props.type || DEFAULT_INPUT_TYPE;
+const TextArea = props => {
   const label = props.label || props.name;
 
   return (
@@ -18,7 +15,7 @@ const InputField = props => {
         });
         return (
           <div className={inputFieldClasses}>
-            <input type={type} name={props.name} onChange={setInputValue} />
+            <textarea name={props.name} onChange={setInputValue} />
             <label htmlFor="">{label}</label>
             {error ? <p className="error-message">{error}</p> : ''}
           </div>
@@ -28,4 +25,4 @@ const InputField = props => {
   );
 };
 
-export default InputField;
+export default TextArea;
