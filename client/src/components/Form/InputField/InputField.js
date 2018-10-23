@@ -11,15 +11,27 @@ const InputField = props => {
 
   return (
     <Consumer>
-      {({ setInputValue, errors }) => {
+      {({ setInputValue, errors, getValue }) => {
         const error = errors[props.name];
+        const value = getValue(props.name);
+
         const inputFieldClasses = classnames('input-field', {
           error: error
         });
+
+        const labelClasses = classnames({
+          active: value
+        });
+
         return (
           <div className={inputFieldClasses}>
-            <input type={type} name={props.name} onChange={setInputValue} />
-            <label htmlFor="">{label}</label>
+            <input
+              type={type}
+              name={props.name}
+              value={value}
+              onChange={setInputValue}
+            />
+            <label className={labelClasses}>{label}</label>
             {error ? <p className="error-message">{error}</p> : ''}
           </div>
         );

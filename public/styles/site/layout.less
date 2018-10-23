@@ -93,14 +93,16 @@ h3 {
   font-size: 1.6em;
 }
 h4 {
-  font-size: 1.2em;
+  font-size: 1.3em;
 }
 h5 {
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 p,
-h6 {
-  font-size: 0.6em;
+h6,
+input,
+label {
+  font-size: 0.8em;
 }
 
 p,
@@ -348,50 +350,31 @@ footer {
 .input-field {
   @input-active-color: @secondary-color;
 
-  font-size: 1.2em;
-  width: 100%;
-  margin-bottom: 10px;
-
-  input,
-  textarea,
-  label {
-    display: block;
-    font-size: inherit;
-    width: inherit;
-    padding: 5px 10px;
-  }
-
   input,
   textarea {
-    border: 0px solid transparent;
-    border-bottom: 2px solid grey;
-
     &:focus {
-      outline: transparent;
-      border-bottom: 2px solid @input-active-color;
+      border-bottom-color: @input-active-color;
     }
+
+    // & + label{
+
+    // }
   }
 
-  label {
-    display: none;
-    // width: 100%;
-    // position: absolute;
-    // left: 0.75em;
-  }
-
-  textarea {
-    height: 4em;
+  .active {
+    color: @input-active-color;
   }
 
   &.error {
     color: red;
-    * {
-      color: inherit;
+
+    label {
+      color: red;
     }
 
     input,
     textarea {
-      border-color: red;
+      border-bottom-color: red;
     }
 
     .error-message {
@@ -406,6 +389,437 @@ footer {
 }
 
 /*
+ * Materialize label transisiton
+ * https://materializecss.com
+*/
+
+/* Text inputs */
+input:not([type]),
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='url'],
+input[type='time'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='tel'],
+input[type='number'],
+input[type='search'],
+textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9e9e9e;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 20px 0;
+  padding: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+input:not([type]):disabled,
+input:not([type])[readonly='readonly'],
+input[type='text']:disabled,
+input[type='text'][readonly='readonly'],
+input[type='password']:disabled,
+input[type='password'][readonly='readonly'],
+input[type='email']:disabled,
+input[type='email'][readonly='readonly'],
+input[type='url']:disabled,
+input[type='url'][readonly='readonly'],
+input[type='time']:disabled,
+input[type='time'][readonly='readonly'],
+input[type='date']:disabled,
+input[type='date'][readonly='readonly'],
+input[type='datetime']:disabled,
+input[type='datetime'][readonly='readonly'],
+input[type='datetime-local']:disabled,
+input[type='datetime-local'][readonly='readonly'],
+input[type='tel']:disabled,
+input[type='tel'][readonly='readonly'],
+input[type='number']:disabled,
+input[type='number'][readonly='readonly'],
+input[type='search']:disabled,
+input[type='search'][readonly='readonly'],
+textarea:disabled,
+textarea[readonly='readonly'] {
+  color: rgba(0, 0, 0, 0.42);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.42);
+}
+
+// input:not([type]):focus:not([readonly]),
+// input[type='text']:focus:not([readonly]),
+// input[type='password']:focus:not([readonly]),
+// input[type='email']:focus:not([readonly]),
+// input[type='url']:focus:not([readonly]),
+// input[type='time']:focus:not([readonly]),
+// input[type='date']:focus:not([readonly]),
+// input[type='datetime']:focus:not([readonly]),
+// input[type='datetime-local']:focus:not([readonly]),
+// input[type='tel']:focus:not([readonly]),
+// input[type='number']:focus:not([readonly]),
+// input[type='search']:focus:not([readonly]),
+// textarea:focus:not([readonly]) {
+//   border-bottom: 1px solid #26a69a;
+//   -webkit-box-shadow: 0 1px 0 0 #26a69a;
+//   box-shadow: 0 1px 0 0 #26a69a;
+// }
+
+// input:not([type]):focus:not([readonly]) + label,
+// input[type='text']:focus:not([readonly]) + label,
+// input[type='password']:focus:not([readonly]) + label,
+// input[type='email']:focus:not([readonly]) + label,
+// input[type='url']:focus:not([readonly]) + label,
+// input[type='time']:focus:not([readonly]) + label,
+// input[type='date']:focus:not([readonly]) + label,
+// input[type='datetime']:focus:not([readonly]) + label,
+// input[type='datetime-local']:focus:not([readonly]) + label,
+// input[type='tel']:focus:not([readonly]) + label,
+// input[type='number']:focus:not([readonly]) + label,
+// input[type='search']:focus:not([readonly]) + label,
+// textarea:focus:not([readonly]) + label {
+//   color: #26a69a;
+// }
+
+// input:not([type]).validate + label,
+// input[type='text'].validate + label,
+// input[type='password'].validate + label,
+// input[type='email'].validate + label,
+// input[type='url'].validate + label,
+// input[type='time'].validate + label,
+// input[type='date'].validate + label,
+// input[type='datetime'].validate + label,
+// input[type='datetime-local'].validate + label,
+// input[type='tel'].validate + label,
+// input[type='number'].validate + label,
+// input[type='search'].validate + label,
+// textarea.validate + label {
+//   width: 100%;
+// }
+
+input:not([type]).invalid + label:after,
+input:not([type]).valid + label:after,
+input[type='text'].invalid + label:after,
+input[type='text'].valid + label:after,
+input[type='password'].invalid + label:after,
+input[type='password'].valid + label:after,
+input[type='email'].invalid + label:after,
+input[type='email'].valid + label:after,
+input[type='url'].invalid + label:after,
+input[type='url'].valid + label:after,
+input[type='time'].invalid + label:after,
+input[type='time'].valid + label:after,
+input[type='date'].invalid + label:after,
+input[type='date'].valid + label:after,
+input[type='datetime'].invalid + label:after,
+input[type='datetime'].valid + label:after,
+input[type='datetime-local'].invalid + label:after,
+input[type='datetime-local'].valid + label:after,
+input[type='tel'].invalid + label:after,
+input[type='tel'].valid + label:after,
+input[type='number'].invalid + label:after,
+input[type='number'].valid + label:after,
+input[type='search'].invalid + label:after,
+input[type='search'].valid + label:after,
+textarea.invalid + label:after,
+textarea.valid + label:after {
+  display: none;
+}
+
+input:not([type]).invalid + label.active:after,
+input:not([type]).valid + label.active:after,
+input[type='text'].invalid + label.active:after,
+input[type='text'].valid + label.active:after,
+input[type='password'].invalid + label.active:after,
+input[type='password'].valid + label.active:after,
+input[type='email'].invalid + label.active:after,
+input[type='email'].valid + label.active:after,
+input[type='url'].invalid + label.active:after,
+input[type='url'].valid + label.active:after,
+input[type='time'].invalid + label.active:after,
+input[type='time'].valid + label.active:after,
+input[type='date'].invalid + label.active:after,
+input[type='date'].valid + label.active:after,
+input[type='datetime'].invalid + label.active:after,
+input[type='datetime'].valid + label.active:after,
+input[type='datetime-local'].invalid + label.active:after,
+input[type='datetime-local'].valid + label.active:after,
+input[type='tel'].invalid + label.active:after,
+input[type='tel'].valid + label.active:after,
+input[type='number'].invalid + label.active:after,
+input[type='number'].valid + label.active:after,
+input[type='search'].invalid + label.active:after,
+input[type='search'].valid + label.active:after,
+textarea.invalid + label.active:after,
+textarea.valid + label.active:after {
+  display: block;
+}
+
+/* Validation Sass Placeholders */
+input.valid:not([type]),
+input.valid:not([type]):focus,
+input[type='text'].valid,
+input[type='text'].valid:focus,
+input[type='password'].valid,
+input[type='password'].valid:focus,
+input[type='email'].valid,
+input[type='email'].valid:focus,
+input[type='url'].valid,
+input[type='url'].valid:focus,
+input[type='time'].valid,
+input[type='time'].valid:focus,
+input[type='date'].valid,
+input[type='date'].valid:focus,
+input[type='datetime'].valid,
+input[type='datetime'].valid:focus,
+input[type='datetime-local'].valid,
+input[type='datetime-local'].valid:focus,
+input[type='tel'].valid,
+input[type='tel'].valid:focus,
+input[type='number'].valid,
+input[type='number'].valid:focus,
+input[type='search'].valid,
+input[type='search'].valid:focus,
+textarea.valid,
+textarea.valid:focus,
+.select-wrapper.valid > input.select-dropdown {
+  border-bottom: 1px solid #4caf50;
+  -webkit-box-shadow: 0 1px 0 0 #4caf50;
+  box-shadow: 0 1px 0 0 #4caf50;
+}
+
+input.invalid:not([type]),
+input.invalid:not([type]):focus,
+input[type='text'].invalid,
+input[type='text'].invalid:focus,
+input[type='password'].invalid,
+input[type='password'].invalid:focus,
+input[type='email'].invalid,
+input[type='email'].invalid:focus,
+input[type='url'].invalid,
+input[type='url'].invalid:focus,
+input[type='time'].invalid,
+input[type='time'].invalid:focus,
+input[type='date'].invalid,
+input[type='date'].invalid:focus,
+input[type='datetime'].invalid,
+input[type='datetime'].invalid:focus,
+input[type='datetime-local'].invalid,
+input[type='datetime-local'].invalid:focus,
+input[type='tel'].invalid,
+input[type='tel'].invalid:focus,
+input[type='number'].invalid,
+input[type='number'].invalid:focus,
+input[type='search'].invalid,
+input[type='search'].invalid:focus,
+textarea.invalid,
+textarea.invalid:focus,
+.select-wrapper.invalid > input.select-dropdown {
+  border-bottom: 1px solid #f44336;
+  -webkit-box-shadow: 0 1px 0 0 #f44336;
+  box-shadow: 0 1px 0 0 #f44336;
+}
+
+input:not([type]).valid + label:after,
+input:not([type]):focus.valid + label:after,
+input[type='text'].valid + label:after,
+input[type='text']:focus.valid + label:after,
+input[type='password'].valid + label:after,
+input[type='password']:focus.valid + label:after,
+input[type='email'].valid + label:after,
+input[type='email']:focus.valid + label:after,
+input[type='url'].valid + label:after,
+input[type='url']:focus.valid + label:after,
+input[type='time'].valid + label:after,
+input[type='time']:focus.valid + label:after,
+input[type='date'].valid + label:after,
+input[type='date']:focus.valid + label:after,
+input[type='datetime'].valid + label:after,
+input[type='datetime']:focus.valid + label:after,
+input[type='datetime-local'].valid + label:after,
+input[type='datetime-local']:focus.valid + label:after,
+input[type='tel'].valid + label:after,
+input[type='tel']:focus.valid + label:after,
+input[type='number'].valid + label:after,
+input[type='number']:focus.valid + label:after,
+input[type='search'].valid + label:after,
+input[type='search']:focus.valid + label:after,
+textarea.valid + label:after,
+textarea:focus.valid + label:after,
+.select-wrapper.valid + label:after {
+  content: attr(data-success);
+  color: #4caf50;
+  opacity: 1;
+  -webkit-transform: translateY(9px);
+  transform: translateY(9px);
+}
+
+input:not([type]).invalid + label:after,
+input:not([type]):focus.invalid + label:after,
+input[type='text'].invalid + label:after,
+input[type='text']:focus.invalid + label:after,
+input[type='password'].invalid + label:after,
+input[type='password']:focus.invalid + label:after,
+input[type='email'].invalid + label:after,
+input[type='email']:focus.invalid + label:after,
+input[type='url'].invalid + label:after,
+input[type='url']:focus.invalid + label:after,
+input[type='time'].invalid + label:after,
+input[type='time']:focus.invalid + label:after,
+input[type='date'].invalid + label:after,
+input[type='date']:focus.invalid + label:after,
+input[type='datetime'].invalid + label:after,
+input[type='datetime']:focus.invalid + label:after,
+input[type='datetime-local'].invalid + label:after,
+input[type='datetime-local']:focus.invalid + label:after,
+input[type='tel'].invalid + label:after,
+input[type='tel']:focus.invalid + label:after,
+input[type='number'].invalid + label:after,
+input[type='number']:focus.invalid + label:after,
+input[type='search'].invalid + label:after,
+input[type='search']:focus.invalid + label:after,
+textarea.invalid + label:after,
+textarea:focus.invalid + label:after,
+.select-wrapper.invalid + label:after {
+  content: attr(data-error);
+  color: #f44336;
+  opacity: 1;
+  -webkit-transform: translateY(9px);
+  transform: translateY(9px);
+}
+
+input:not([type]) + label:after,
+input[type='text'] + label:after,
+input[type='password'] + label:after,
+input[type='email'] + label:after,
+input[type='url'] + label:after,
+input[type='time'] + label:after,
+input[type='date'] + label:after,
+input[type='datetime'] + label:after,
+input[type='datetime-local'] + label:after,
+input[type='tel'] + label:after,
+input[type='number'] + label:after,
+input[type='search'] + label:after,
+textarea + label:after,
+.select-wrapper + label:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: 0.2s opacity ease-out, 0.2s color ease-out;
+  transition: 0.2s opacity ease-out, 0.2s color ease-out;
+}
+
+.input-field {
+  position: relative;
+  margin-top: 1rem;
+}
+
+.input-field label {
+  color: #9e9e9e;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  font-size: 1rem;
+  cursor: text;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  -webkit-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+  text-align: initial;
+  -webkit-transform: translateY(12px);
+  transform: translateY(12px);
+  pointer-events: none;
+}
+
+.input-field input:focus + label,
+.input-field label:not(.label-icon).active {
+  -webkit-transform: translateY(-14px) scale(0.8);
+  transform: translateY(-14px) scale(0.8);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+/* Search Field */
+.input-field input[type='search'] {
+  display: block;
+  line-height: inherit;
+}
+
+.input-field input[type='search']:focus {
+  background-color: #fff;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #444;
+}
+
+.input-field input[type='search']:focus + label i,
+.input-field input[type='search']:focus ~ .mdi-navigation-close,
+.input-field input[type='search']:focus ~ .material-icons {
+  color: #444;
+}
+
+.input-field input[type='search'] + label {
+  left: 1rem;
+}
+
+.input-field input[type='search'] ~ .mdi-navigation-close,
+.input-field input[type='search'] ~ .material-icons {
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  color: transparent;
+  cursor: pointer;
+  font-size: 2rem;
+  -webkit-transition: 0.3s color;
+  transition: 0.3s color;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  height: 3rem;
+  background-color: transparent;
+}
+
+textarea {
+  overflow-y: hidden;
+  /* prevents scroll bar flash */
+  padding: 0.8rem 0 1.6rem 0;
+  /* prevents text jump on Enter keypress */
+  resize: none;
+  min-height: 3rem;
+}
+
+textarea + label {
+  height: 100%;
+}
+
+textarea + label::after {
+  top: calc(100% - 12px);
+}
+
+.input-field textarea:focus + label,
+textarea + label:not(.label-icon).active {
+  -webkit-transform: translateY(-25px);
+  transform: translateY(-25px);
+}
+
+/*
  * flash messages
 */
 
@@ -413,7 +827,6 @@ footer {
   display: block;
   border-radius: 10px;
   padding: 20px 10px;
-  // width: 75%;
   margin: 10px auto;
 }
 

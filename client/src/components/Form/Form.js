@@ -13,7 +13,12 @@ class Form extends Component {
     };
 
     this.setInputValue = this.setInputValue.bind(this);
+    this.getValue = this.getValue.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  getValue(name) {
+    return this.state[name];
   }
 
   /*
@@ -130,7 +135,8 @@ class Form extends Component {
         <Provider
           value={{
             setInputValue: this.setInputValue,
-            errors: this.state.errors
+            errors: this.state.errors,
+            getValue: this.getValue
           }}
         >
           {this.props.children}
