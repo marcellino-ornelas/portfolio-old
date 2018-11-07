@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
+import classnames from 'classnames';
+
+import SocialLink from './SocialLink/';
+
+class Social {
+  constructor(icon, to) {
+    this.icon = icon;
+    this.to = to;
+  }
+}
 
 const SocialLinks = props => {
+  const { github, linkedIn, website, email } = props.profile;
+  const socialLinks = [
+    new Social('github', github),
+    new Social('linkedin-square', linkedIn),
+    new Social('envelope-o', 'mailto:' + email)
+    // new Social('global', website)
+  ];
+
   return (
-    <div className="social fx">
-      <a href={props.profile.github} target="_blank">
-        <i className="fa fa-lg fa-github" aria-hidden="true" />
-      </a>
-      <a href={props.profile.linkedIn} target="_blank">
-        <i className="fa fa-lg fa-linkedin-square" aria-hidden="true" />
-      </a>
-      <a href={props.profile.website} target="_blank">
-        <i className="fa fa-lg fa-envelope-o" aria-hidden="true" />
-      </a>
-    </div>
+    <ul className="social-links">
+      {socialLinks.map((link, i) => {
+        return <SocialLink to={link.to} icon={link.icon} key={i} />;
+      })}
+    </ul>
   );
 };
 

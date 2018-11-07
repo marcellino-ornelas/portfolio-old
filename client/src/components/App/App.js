@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import Nav from '../Nav';
 import Footer from '../Footer';
+import Social from '../SocialLinks';
 
 const Loading = () => <div>Loading...</div>;
 
@@ -83,6 +84,9 @@ class App extends Component {
             <Route render={() => <div>404: No route found</div>} />
           </Switch>
         </main>
+        <div className="desktop-social">
+          <Social profile={this.state.profile} />
+        </div>
       </React.Fragment>
     );
   }

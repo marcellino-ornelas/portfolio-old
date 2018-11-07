@@ -223,6 +223,38 @@ footer {
   }
 }
 
+.desktop-social {
+  @bg-color: #eeeeee;
+  @border-color: darken(@bg-color, 7%);
+  .social-links {
+    li {
+      padding: 5px 20px;
+      // padding-left: 5px;
+      // padding-right: 5px;
+    }
+
+    li:nth-last-child(1n + 2) {
+      border-right: 1px solid @border-color;
+    }
+  }
+  background-color: @bg-color;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid @border-color;
+  border-collapse: separate;
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+}
+
+.social-links {
+  .fx;
+  // width: 100;
+
+  li {
+    // flex: 1 1 auto;
+  }
+}
+
 /*
  * flex
 */
