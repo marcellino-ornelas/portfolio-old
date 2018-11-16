@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link as NavLink } from 'react-router-dom';
 import SocialLinks from '../SocialLinks/';
+import { observer, inject } from 'mobx-react';
 
+@inject('userStore')
 class AboutMe extends Component {
   // constructor(props){
   // super(props);
@@ -18,6 +20,12 @@ class AboutMe extends Component {
   // componentDidUpdate(){}
 
   render() {
+    const store = this.props.userStore;
+
+    const capitalize = s => s[0].toUpperCase() + s.slice(1);
+    const fullName = [store.profile.name.first, store.profile.name.last]
+      .map(capitalize)
+      .join(' ');
     return (
       <div className="about-me row">
         <div className="col s12 m12 l3">
@@ -27,7 +35,7 @@ class AboutMe extends Component {
               alt=""
               className="profile-pic circle"
             />
-            <h6 className="profile-name">Marcellino Ornelas</h6>
+            <h6 className="profile-name">{fullName}</h6>
           </div>
           <ul className="collection">
             <a href="/Resume.pdf" className="collection-item" target="_blank">
@@ -41,27 +49,20 @@ class AboutMe extends Component {
             </NavLink>
           </ul>
           <div className="center-align">
-            <SocialLinks profile={this.props.profile} />
+            <SocialLinks profile={store.profile} />
           </div>
         </div>
         <div className="col s12 m12 l9">
           <div className="row">
             <div className="fx header">
-              <h3>
-                {this.props.profile.name.first} {this.props.profile.name.last}
-              </h3>
+              <h3>{fullName}</h3>
               {/*<SocialLinks profile={this.props.profile} />*/}
             </div>
           </div>
           <div className="divider" />
           <div className="row">
             <div className="s12">
-              <p className="flow-text">
-                I am a highly efficient and hardworking with a “can do” attitude
-                Full Stack Web Developer that has grasped a deep understanding
-                of web development. Possessing a positive team spirit, deadline
-                orientated and has the ability to produce outstanding results.
-              </p>
+              <p className="flow-text">{store.profile.description}</p>
             </div>
           </div>
         </div>
