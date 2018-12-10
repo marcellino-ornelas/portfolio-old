@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link as NavLink } from 'react-router-dom';
 
+// @inject('userStore')
 class Nav extends Component {
   // constructor(props){
   // super(props);

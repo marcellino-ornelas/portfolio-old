@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import Project from './Project/';
 import { observer, inject } from 'mobx-react';
 
-@inject('groceryStore')
-@observer
+@inject('userStore')
 class Projects extends Component {
   constructor(props) {
     super(props);

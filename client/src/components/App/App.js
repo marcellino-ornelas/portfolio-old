@@ -59,7 +59,7 @@ class App extends Component {
                 !store.projects.length ? (
                   <Loading />
                 ) : (
-                  <Projects {...props} projects={store.projects} />
+                  <Projects {...props} /*projects={store.projects}*/ />
                 )
               }
             />
