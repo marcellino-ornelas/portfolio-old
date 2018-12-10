@@ -11,7 +11,7 @@ import { observer, inject } from 'mobx-react';
 import Nav from '../Nav';
 import Footer from '../Footer';
 
-const Loading = () => <div>Loading...</div>;
+// const Loading = () => <div>Loading...</div>;
 
 /*
  * Pages
@@ -25,15 +25,10 @@ import Home from '../Home/';
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {
-			profile: {},
-			projects: []
-		};
 	}
 
 	componentDidMount() {
-		const store = this.props.userStore;
-		store.fetchProfile();
+		this.props.userStore.fetchProfile();
 	}
 
 	render() {
@@ -43,30 +38,10 @@ class App extends Component {
 				<Nav />
 				<main>
 					<Switch>
-						<Route
-							path="/projects"
-							exact
-							render={props =>
-								!store.projects.length ? <Loading /> : <Projects {...props} />
-							}
-						/>
-						<Route
-							path="/about-me"
-							exact
-							render={props =>
-								!store.profile ? (
-									<Loading />
-								) : (
-									<AboutMe {...props} profile={store.profile} />
-								)
-							}
-						/>
+						<Route path="/projects" exact component={Projects} />
+						<Route path="/about-me" exact component={AboutMe} />
 						<Route path="/contact-me" exact component={ContactMe} />
-						<Route
-							path="/"
-							exact
-							render={props => <Home {...props} /*profile={store.profile}*/ />}
-						/>
+						<Route path="/" exact component={Home} />
 						<Route render={() => <div>404: No route found</div>} />
 					</Switch>
 				</main>

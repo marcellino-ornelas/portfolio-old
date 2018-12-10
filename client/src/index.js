@@ -8,18 +8,20 @@ import { Provider } from 'mobx-react';
  * Store 
 */
 
-import UserStore from './components/App/UserStore.js';
+import ProfileStore from './store/profile';
+import ProjectStore from './store/projects';
 
-const userStore = new UserStore();
+const profileStore = new ProfileStore();
+const projectStore = new ProjectStore();
 
 // Component level styling
 // import './styles/main.css';
 
 ReactDOM.render(
-  <Router>
-    <Provider userStore={userStore}>
-      <App />
-    </Provider>
-  </Router>,
-  document.getElementById('app')
+	<Router>
+		<Provider userStore={profileStore} projectStore={projectStore}>
+			<App />
+		</Provider>
+	</Router>,
+	document.getElementById('app')
 );

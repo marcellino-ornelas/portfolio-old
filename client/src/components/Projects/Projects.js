@@ -2,36 +2,38 @@ import React, { Component } from 'react';
 import Project from './Project/';
 import { observer, inject } from 'mobx-react';
 
-@inject('userStore')
+@inject('projectStore')
+@observer
 class Projects extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+	constructor(props) {
+		super(props);
+	}
 
-  // componentDidMount(){}
+	componentDidMount() {
+		this.props.projectStore.fetchProjects();
+	}
 
-  render() {
-    const store = this.props.userStore;
-    const projects = !store.projects.length ? (
-      <div>Loading....</div>
-    ) : (
-      store.projects.map((project, index) => {
-        return <Project project={project} key={index} />;
-      })
-    );
+	render() {
+		const projectStore = this.props.projectStore;
+		const projects = projectStore.isEmpty() ? (
+			<div>Loading....</div>
+		) : (
+			projectStore.projects.map((project, index) => {
+				return <Project project={project} key={index} />;
+			})
+		);
 
-    return (
-      <div>
-        <div className="section">
-          <div id="projects" className="container">
-            <h2> Projects </h2>
-            <div className="row">{projects}</div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+		return (
+			<div>
+				<div className="section">
+					<div id="projects" className="container">
+						<h2> Projects </h2>
+						<div className="row">{projects}</div>
+					</div>
+				</div>
+			</div>
+		);
+	}
 }
 
 export default Projects;

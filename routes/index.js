@@ -21,103 +21,64 @@
 const keystone = require('keystone');
 const middleware = require('./middleware');
 const async = require('async');
+const path = require('path');
 
-const importRoutes = keystone.importer(__dirname);
-
-// Common Middleware
-keystone.pre('routes', middleware.initLocals);
-keystone.pre('render', middleware.flashMessages);
-
-// Import Route Controllers
-const routes = {
-  views: importRoutes('./views')
-};
+const apiRouter = require('./api');
 
 // Setup Route Bindings
 exports = module.exports = function(app) {
-  // app.use(middleware.loadMyProfile);
+	// Views
+	app.use('/api/', apiRouter);
 
-  // Views
-  app.get('/', routes.views.index);
-  // app.get('/projects', routes.views.projects);
-  // app.get('/contact-us', routes.views.contact);
-  // app.get('/about', routes.views.about);
-  app.get('/my-profile', function(req, res) {
-    // take out password
+	app.post('/contact', function(req, res) {
+		const body = req.body;
+		res.locals.data = body;
+		const contactInfo = {
+			name: {
+				first: body.firstName,
+				last: body.lastName
+			},
+			email: body.email,
+			description: body.description
+		};
+		async.series(
+			[
+				function(cb) {
+					// check for empty values
+					const hasNoMissingFields = !(
+						!!body.firstName &&
+						body.lastName &&
+						body.email &&
+						body.description
+					);
+					cb(hasNoMissingFields);
+				},
+				function(cb) {
+					const contactMessage = keystone.list('Contact').model(contactInfo);
+					contactMessage.save(cb);
+				}
+			],
+			function(err, results) {
+				if (err) {
+					req.flash(
+						'error',
+						'Sorry! There was a problem in your form please try again.'
+					);
+					res.redirect('/contact-us');
+				} else {
+					req.flash(
+						'success',
+						'Thanks for contacting me! Ill get back to you as soon as possible'
+					);
+					res.redirect('/');
+				}
+			}
+		);
+	});
 
-    Promise.all([
-      keystone
-        .list('User')
-        .model.findOne({ isAdmin: true })
-        .exec(),
-      keystone
-        .list('Project')
-        .model.find()
-        .exec()
-    ]).then(function(results) {
-      const profile = results[0];
-      const projects = results[1];
-      // projects[0].toObject();
-
-      res.json({ profile, projects });
-    });
-  });
-
-  app.get('*', function(req, res) {
-    res.redirect('/');
-  });
-
-  app.post('/contact', function(req, res) {
-    const body = req.body;
-
-    res.locals.data = body;
-
-    const contactInfo = {
-      name: {
-        first: body.firstName,
-        last: body.lastName
-      },
-      email: body.email,
-      description: body.description
-    };
-
-    async.series(
-      [
-        function(cb) {
-          // check for empty values
-          const hasNoMissingFields = !(
-            !!body.firstName &&
-            body.lastName &&
-            body.email &&
-            body.description
-          );
-
-          cb(hasNoMissingFields);
-        },
-        function(cb) {
-          const contactMessage = keystone.list('Contact').model(contactInfo);
-
-          contactMessage.save(cb);
-        }
-      ],
-      function(err, results) {
-        if (err) {
-          req.flash(
-            'error',
-            'Sorry! There was a problem in your form please try again.'
-          );
-          res.redirect('/contact-us');
-        } else {
-          req.flash(
-            'success',
-            'Thanks for contacting me! Ill get back to you as soon as possible'
-          );
-          res.redirect('/');
-        }
-      }
-    );
-  });
-
-  // NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-  // app.get('/protected', middleware.requireUser, routes.views.protected);
+	app.get('*', function(req, res) {
+		res.sendFile(path.join(__dirname, '../public/index.html'));
+	});
+	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
+	// app.get('/protected', middleware.requireUser, routes.views.protected);
 };

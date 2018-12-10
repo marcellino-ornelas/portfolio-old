@@ -4,8 +4,7 @@ import { observer, inject } from 'mobx-react';
 
 const Home = inject('userStore')(
 	observer(props => {
-		const { profile = {} } = props.userStore;
-		const name = profile.name || null;
+		const userStore = props.userStore;
 		return (
 			<div className="home">
 				<div className="parallax-container valign-wrapper">
@@ -13,14 +12,12 @@ const Home = inject('userStore')(
 						<img src="/images/computer.jpg" alt="" />
 					</div>
 
-					{!name ? (
+					{!userStore.hasLoaded ? (
 						<div>Loading...</div>
 					) : (
 						<section className="white-text caption">
-							<h1 className="header">
-								{name.first} {name.last}
-							</h1>
-							<h4>{profile.caption}</h4>
+							<h1 className="header">{userStore.fullname}</h1>
+							<h4>{userStore.profile.caption}</h4>
 						</section>
 					)}
 				</div>
