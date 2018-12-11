@@ -1,0 +1,1201 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"p",
+				"public/"
+			],
+			[
+				"profile",
+				"ProfileStore"
+			],
+			[
+				"project",
+				"projectStore"
+			],
+			[
+				"pr",
+				"projects.js"
+			],
+			[
+				"tr",
+				"triggerHover"
+			],
+			[
+				"type",
+				"typeMessage"
+			],
+			[
+				"clea",
+				"cleanEnvAndAddAuth"
+			],
+			[
+				"auth",
+				"auth_error"
+			],
+			[
+				"insta",
+				"instance_variable_get"
+			],
+			[
+				"qa",
+				"qabot"
+			],
+			[
+				"fir",
+				"firstTodoID"
+			],
+			[
+				"get",
+				"getItemById"
+			],
+			[
+				"new",
+				"newUpdatedTodos"
+			],
+			[
+				"Fir",
+				"firstTodoID"
+			],
+			[
+				"co",
+				"completed"
+			],
+			[
+				"to",
+				"toBe"
+			],
+			[
+				"sta",
+				"stateProvider"
+			],
+			[
+				"check",
+				"checkboxs"
+			],
+			[
+				"item",
+				"itemById"
+			],
+			[
+				"is",
+				"isArray"
+			],
+			[
+				"temp",
+				"tempPath"
+			],
+			[
+				"tem",
+				"templateLocation"
+			],
+			[
+				"te",
+				"templateLocation"
+			],
+			[
+				"rel",
+				"relPath"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"file",
+				"fileName"
+			],
+			[
+				"src",
+				"srcFile"
+			],
+			[
+				"fu",
+				"fullPath"
+			],
+			[
+				"dir",
+				"directoryPath"
+			],
+			[
+				"def",
+				"defaultOpts"
+			],
+			[
+				"marcellino",
+				"marcellino-ornelas"
+			],
+			[
+				"words",
+				"wordsByLine\tconst"
+			],
+			[
+				"s",
+				"split\tdirectory"
+			],
+			[
+				"creare",
+				"createWriteStream\tfunction"
+			],
+			[
+				"des",
+				"destPath"
+			],
+			[
+				"wri",
+				"writableLength\tproperty"
+			],
+			[
+				"w",
+				"writableHighWaterMark\tproperty"
+			],
+			[
+				"std",
+				"stdin\tproperty"
+			],
+			[
+				"C",
+				"CPUS\tconst"
+			],
+			[
+				"c",
+				"cpus\tfunction"
+			],
+			[
+				"i",
+				"iTerm2-v3.sh"
+			],
+			[
+				"next",
+				"nextIndexTo\tproperty"
+			],
+			[
+				"lis",
+				"listOfData\tproperty"
+			],
+			[
+				"res",
+				"restOfBuff\tconst"
+			],
+			[
+				"ba",
+				"batchLength\tproperty"
+			],
+			[
+				"create",
+				"createWriteStream\tfunction"
+			],
+			[
+				"Boolean",
+				"boolean\tkeyword"
+			],
+			[
+				"con",
+				"contentToSend\tlet"
+			],
+			[
+				"batch",
+				"batchLength\tproperty"
+			],
+			[
+				"_is",
+				"_isGoodEnoughToSend\tmethod"
+			],
+			[
+				"batc",
+				"batchLength\tproperty"
+			],
+			[
+				"bat",
+				"batchLength\tproperty"
+			],
+			[
+				"Tra",
+				"TransformCallback\ttype"
+			],
+			[
+				"Bathc",
+				"BatchInterface\tinterface"
+			],
+			[
+				"creatre",
+				"createWriteStream\tfunction"
+			],
+			[
+				"padding",
+				"padding-left\tproperty"
+			],
+			[
+				"pos",
+				"position\tproperty"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"S",
+				"SocialLink"
+			],
+			[
+				"fa",
+				"faClass"
+			],
+			[
+				"social",
+				"SocialLinks"
+			],
+			[
+				"soci",
+				"socailLinks"
+			],
+			[
+				"disp",
+				"display_count\tconst"
+			],
+			[
+				"set",
+				"setInterval\tfunction"
+			],
+			[
+				"node",
+				"node-xml-stream\tdirectory"
+			],
+			[
+				"sax",
+				"saxStream\tconst"
+			],
+			[
+				"woker",
+				"workerIndex\tlet"
+			],
+			[
+				"wokr",
+				"workerIndex\tlet"
+			],
+			[
+				"worker",
+				"workerIndex\tlet"
+			],
+			[
+				"wor",
+				"workers\tconst"
+			],
+			[
+				"W",
+				"WordStorage\tinterface"
+			],
+			[
+				"Word",
+				"WordStorage\tinterface"
+			],
+			[
+				"ar",
+				"argv\tproperty"
+			],
+			[
+				"pro",
+				"progress\tconst"
+			],
+			[
+				"write",
+				"writeFile\tfunction"
+			],
+			[
+				"word",
+				"wordStorage\tparameter"
+			],
+			[
+				"re",
+				"remander\tconst"
+			],
+			[
+				"num",
+				"numCPUs\tconst"
+			],
+			[
+				"WORD",
+				"WordStorage\tinterface"
+			],
+			[
+				"fina",
+				"finalCallBack\tparameter"
+			],
+			[
+				"closed",
+				"closedWorkers\tlet"
+			],
+			[
+				"per",
+				"perserveApostrophe\tfunction"
+			],
+			[
+				"R",
+				"ReadStream\tclass"
+			],
+			[
+				"toke",
+				"tokenizer\tvar"
+			],
+			[
+				"m",
+				"mkdir\tfunction"
+			],
+			[
+				"in",
+				"inputValue"
+			],
+			[
+				"va",
+				"validateAll"
+			],
+			[
+				"val",
+				"validate"
+			],
+			[
+				"Tex",
+				"textarea"
+			],
+			[
+				"isV",
+				"isValidated"
+			],
+			[
+				"inpu",
+				"inputValidator"
+			],
+			[
+				"vali",
+				"validate"
+			],
+			[
+				"IN",
+				"inputValidator"
+			],
+			[
+				"valid",
+				"validate"
+			],
+			[
+				"I",
+				"InputField"
+			],
+			[
+				"on",
+				"onSubmit"
+			],
+			[
+				"F",
+				"Form"
+			],
+			[
+				"f",
+				"Form/"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"key",
+				"keyboardPattern\tconst"
+			],
+			[
+				"Key",
+				"Keyboard\tinterface"
+			],
+			[
+				"KeyBoard",
+				"KeyboardPattern\ttype"
+			],
+			[
+				"Keyb",
+				"KeyboardPatter\ttype"
+			],
+			[
+				"de",
+				"deactivateAllStates"
+			],
+			[
+				"over",
+				"overflow\tproperty"
+			],
+			[
+				"open",
+				"openSideBar"
+			],
+			[
+				"alig",
+				"align-items\tproperty"
+			],
+			[
+				"Nav",
+				"NavLink"
+			],
+			[
+				"op",
+				"opacity\tproperty"
+			],
+			[
+				"max",
+				"max-height\tproperty"
+			],
+			[
+				"abs",
+				"absolute\tposition"
+			],
+			[
+				"padd",
+				"padding-top\tproperty"
+			],
+			[
+				"msg",
+				"msgToUser"
+			],
+			[
+				"user",
+				"userName"
+			],
+			[
+				"first",
+				"firstName"
+			],
+			[
+				"pa",
+				"packagesToObject"
+			],
+			[
+				"packe",
+				"packages"
+			],
+			[
+				"All",
+				"AllCompiledFiles"
+			],
+			[
+				"comp",
+				"compiledFiles"
+			],
+			[
+				"path",
+				"pathToFile"
+			],
+			[
+				"dot",
+				"DOT_EXTENTION_MATCH"
+			],
+			[
+				"or",
+				"originalFileName"
+			],
+			[
+				"Dot",
+				"DOT_INTERPOLATION_MATCH"
+			],
+			[
+				"compile",
+				"compileFileName"
+			],
+			[
+				"TEMPLATES",
+				"templates"
+			],
+			[
+				"parse",
+				"parseFileName"
+			],
+			[
+				"use",
+				"useDefault"
+			],
+			[
+				"ti",
+				"tick-tack-toe.js"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "routes/api/index.js",
+			"settings":
+			{
+				"buffer_size": 402,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/index.js",
+			"settings":
+			{
+				"buffer_size": 1469,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/api/contact.js",
+			"settings":
+			{
+				"buffer_size": 963,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".eslintignore",
+			"settings":
+			{
+				"buffer_size": 37,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "marcellino-ornelas.sublime-project",
+			"settings":
+			{
+				"buffer_size": 124,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package con",
+				"Package Control: Install Package"
+			],
+			[
+				"Package in",
+				"Package Control: Install Package"
+			],
+			[
+				"package ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Instal ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Insta",
+				"Package Control: Install Package"
+			],
+			[
+				" Package S",
+				"Package Syncing: Push Settings"
+			],
+			[
+				" Pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package S",
+				"Package Syncing: Define Sync Folder"
+			],
+			[
+				"package ",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"P",
+				"Package Control: Install Package"
+			],
+			[
+				"con",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 255.0,
+		"history":
+		[
+			"print \"hey\"",
+			"print \"hey\";",
+			"pprint \"hey\";",
+			"pprint \"hey\"",
+			"pprint 'hey\"",
+			"pprint 'hey'",
+			"pprint hey",
+			"view.run_command('open_terminal')",
+			"rs",
+			"view",
+			"process",
+			"bash",
+			"pwd",
+			"view.run_command('open_terminal')",
+			"echo \"hey\"",
+			"echo hey",
+			"p \"hey\"",
+			"printf \"hey\"",
+			"print \"hey\"",
+			"print 'hey'",
+			"print 'hey",
+			"echo ",
+			"echo \"hey\"",
+			"echo 'hey'",
+			"dasdf",
+			"echo 'hey'"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/routes",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/routes/api"
+	],
+	"file_history":
+	[
+		"/Users/marcelinoornelas/Desktop/webapp/tests/webdriver-ui-tests/spec/support/helpers/override.rb",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/webdriver-ui-tests/spec/support/helpers/slack_helper.rb",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/components/AboutMe/AboutMe.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/components/App/App.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/public/index.html",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/routes/api/projects.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/store/projects.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/store/profile.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/index.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/components/Projects/Projects.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/templates/layouts/default.pug",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/routes/views/index.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/routes/middleware.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/routes/index.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/components/App/UserStore.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/templates/views/index.pug",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/routes/api/index.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/routes/api/profile.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/routes/views/projects.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/.gitignore",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/components/Home/Home.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/support/utility.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/support/message-list.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/e2e/legacy/custom-status.cy.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/webdriver-ui-tests/spec/growth/create_spec.rb",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/support/auth.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/webdriver-ui-tests/spec/support/helpers/text_helper.rb",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/support/api.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/cypress.json",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/support/setup.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/support/index.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/support/ts-auth.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/support/environment.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/e2e/legacy/channels/channel-invite.cy.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/e2e/utility.cy.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/stability.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/plugins/index.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/README.md",
+		"/Users/marcelinoornelas/Desktop/development/Templates/src/template.js",
+		"/Users/marcelinoornelas/Desktop/development/Templates/src/utils.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/webdriver-ui-tests/spec/core_product/pins_spec.rb",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/e2e/checkout/support/constants.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/cypress/e2e/checkout/support/utilities.js",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/rspec-api-tests/.pre_commit",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/webdriver-ui-tests/.pre_commit",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/webdriver-ui-tests/README.md",
+		"/Users/marcelinoornelas/Desktop/webapp/include/credentials.php.ctmpl",
+		"/Users/marcelinoornelas/Desktop/webapp/tests/.htaccess",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/tests/visual.test.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/tests/e2e.test.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/tests/unit.test.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/tests/integration.test.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/package.json",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/node_modules/selenium-webdriver/package.json",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/node_modules/immutability-helper/index.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/react-simple-boilerplate.sublime-project",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/src/services/todo.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/src/components/wrappers/App.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/tests/setup.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/.eslintrc.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/src/components/ui/Filter.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/src/components/ui/InputBox.js",
+		"/Users/marcelinoornelas/Desktop/Slack/react-simple-boilerplate/src/components/hoc/wrapInputBox.js",
+		"/Users/marcelinoornelas/Desktop/webapp/style/libs/swiper.css",
+		"/Users/marcelinoornelas/Library/Application Support/Sublime Text 3/Packages/User/SublimeHackfmt.sublime-settings",
+		"/Users/marcelinoornelas/Library/Application Support/Sublime Text 3/Packages/SublimeHackfmt/README.md",
+		"/Users/marcelinoornelas/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/marcelinoornelas/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/marcelinoornelas/Library/Application Support/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/Users/marcelinoornelas/Library/Application Support/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+		"/Users/marcelinoornelas/Library/Application Support/Sublime Text 3/Packages/User/Package Syncing.sublime-settings",
+		"/Users/marcelinoornelas/Library/Application Support/Sublime Text 3/Packages/Package Syncing/Package Syncing.sublime-settings",
+		"/Users/marcelinoornelas/Desktop/development/Templates/.gitignore",
+		"/Users/marcelinoornelas/Desktop/development/Templates/lib-old/template.js",
+		"/Users/marcelinoornelas/Desktop/development/Templates/lib-old/File.js",
+		"/Users/marcelinoornelas/Desktop/development/Templates/src/File.js",
+		"/Users/marcelinoornelas/Desktop/development/Templates/dest/index.js",
+		"/Users/marcelinoornelas/Desktop/development/Templates/templates/main/index.js.dot",
+		"/Users/marcelinoornelas/Desktop/development/Templates/index.js",
+		"/Users/marcelinoornelas/Desktop/development/Templates/templates/main/index.js",
+		"/Users/marcelinoornelas/Desktop/development/Templates/package.json",
+		"/Users/marcelinoornelas/Desktop/development/Templates/.babelrc",
+		"/Users/marcelinoornelas/Desktop/development/Templates/template.js",
+		"/Users/marcelinoornelas/Desktop/tick-tack-toe/index.js",
+		"/Users/marcelinoornelas/Desktop/tick-tack-toe/tick-tack-toe.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/data-scripts/WordCounter.ts",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/.bin/progress.sh",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/data-scripts/parseXML.ts",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/queue-test.txt",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/node_modules/saxophone/lib/Saxophone.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/node_modules/forkqueue/queue.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/data-scripts/worker.ts",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/data-scripts/count.ts",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/data.txt",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/lib/data-scripts/worker.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/.bin/wikiParser.sh",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/file.txt",
+		"/Users/marcelinoornelas/Desktop/development/create-components-react/node_modules/dot/index.js",
+		"/Users/marcelinoornelas/Desktop/development/create-components-react/index.js",
+		"/Users/marcelinoornelas/Desktop/development/create-components-react/README.md",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/data-scripts/parent",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/components/SocialLinks/SocialLinks.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/data-scripts/pbcopy",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/buffer.d.ts",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/tsconfig.json",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/package.json",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/components/SocialLinks/SocialLink/SocialLink.js",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/components/ContactMe/ContactMe.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/node_modules/tlds/index.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/node_modules/tlds/Readme.md",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/data-scripts/count_wikipedia.ts",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/node_modules/sax/README.md",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/example.xml.bz2",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/example.xml",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/package-lock.json",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/.gitignore",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/data-scripts/wikiParser.sh",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/wikipedia-todo.txt",
+		"/Users/marcelinoornelas/Desktop/FullStack-Lesson-Plans/cspell.json",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/data/wiki_count.txt",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/lib/data-scripts/count_wikipedia.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/lib/index.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/README.md",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/.bin/wikiExtractor.sh",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/.bin/wikiExtractor-nim.sh",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/en_sents/AA/wiki_00",
+		"/Users/marcelinoornelas/Desktop/development/marcellino-ornelas/client/src/components/Form/InputField/index.js",
+		"/Users/marcelinoornelas/Desktop/zxcvbn2/src/module.d.ts"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 4,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "routes/api/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 402,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								362,
+								362
+							]
+						],
+						"settings":
+						{
+							"SL.47.region_keys":
+							[
+								"sublime_linter.protected_regions"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "routes/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1469,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1192,
+								1192
+							]
+						],
+						"settings":
+						{
+							"SL.51.region_keys":
+							[
+								"SL.eslint.Highlights.|5bdb7abab6a82d2820ed105938d8fc9b93c962ed93be84d55d61f10823d43004|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|523ebbdac69a44069229bb63844dd6303f23ff97eb4967af8eb6413ab7c12501|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"SL.eslint.Highlights.|23aeb71298f8d944decb8342272a15b728efb142ac4c7b56b29b89673f3bb38e|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|a76418411c1a7210f8d79cf64297a06b810dc9fc39248aa08492e5e52f7d718c|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|6c9e5bc12a1065ada48d977af0396aa6272b538d6943782dfe964e8f55a1845e|region.redish markup.error.sublime_linter|32",
+								"sublime_linter.protected_regions"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "routes/api/contact.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 963,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								462,
+								462
+							]
+						],
+						"settings":
+						{
+							"SL.49.region_keys":
+							[
+								"SL.eslint.Highlights.|ac15d7b4d947f50d3ffdb916e2d8598308b6ea2ffc6e42cd7dcf455615a4f603|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|eff91b76c96105ee6653366429ace5a2ca9c61f6f3fb350fd1b2f9272c2b3d91|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|57f823e3102e0501f3933c9ee364e4afdec03b2d6e83ac570d167440db5f5791|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|9f3fbbcbfff70816d1c46ed3e85d5cc81e9d8ba790d0d285b05f37c6f3332fd8|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|1046bf9338611a39df1dab09f346112662d4cbfbad6a49b3a9454b7b92b2c994|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Gutter.|region.redish markup.error.sublime_linter|dot",
+								"SL.eslint.Highlights.|624236a720a197c13642dca6fe37e96e457f6696b248724900683921b74938e5|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|800d2e3a00ea8f0eef002a0e5537c4c7fe7ff8038446fa51a22f8d5ad8119334|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|e124b05c8c9b1a7231a5797f7f2a1a0770f5514614571ad29611cb390b21ae8a|region.redish markup.error.sublime_linter|32",
+								"sublime_linter.protected_regions",
+								"SL.eslint.Highlights.|69f1cefa71dba7f9d82f623760ebca6eb70aeaf3461cb61f30690cf6364e25c4|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|025b0822ff195f93d902525a0c1bb3032d66d0aa5eecafbf5d64131a02ccf7b3|region.redish markup.error.sublime_linter|32",
+								"SL.eslint.Highlights.|64da997da885f4c617dff66366fd69e6e5538a68974a1c6887a65786c9b81bea|region.redish markup.error.sublime_linter|32"
+							],
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"open_with_edit": true,
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".eslintignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37,
+								37
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "marcellino-ornelas.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 124,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								121,
+								121
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"translate_tabs_to_spaces": false,
+							"trim_trailing_white_space_on_save": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 132.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 132.0
+	},
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 300.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/JavaScript.sublime-build",
+	"project": "marcellino-ornelas.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"router",
+				"routes/views/projects.js"
+			],
+			[
+				"react",
+				"webdriver-ui-tests/spec/core_product/reaction_spec.rb"
+			],
+			[
+				".css",
+				"style/libs/swiper.css"
+			],
+			[
+				"work",
+				"src/data-scripts/worker.ts"
+			],
+			[
+				"",
+				"src/data-scripts/WordCounter.ts"
+			],
+			[
+				"videoPlayer.js",
+				"src/components/videoPlayer.js"
+			],
+			[
+				"vidoeList.js",
+				"src/components/videoList.js"
+			],
+			[
+				"templates/",
+				"src/templates/videoListEntry.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 277.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

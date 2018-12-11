@@ -1,0 +1,12 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+  "settings": {
+  		"SublimeLinter.linters.eslint.disable": true,
+  		"SublimeLinter.linters.jshint.disable": true
+  }
+}

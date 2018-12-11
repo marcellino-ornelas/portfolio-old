@@ -10,6 +10,7 @@ const CLOSE_SIDE_BAR = {
   openSideBar: false
 };
 
+// @inject('userStore')
 class Nav extends Component {
   constructor(props) {
     super(props);
