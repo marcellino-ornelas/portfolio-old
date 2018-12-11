@@ -1,6 +1,11 @@
 import { observable, computed, action, runInAction } from 'mobx';
 import axios from 'axios';
 
+/**
+ * Take a sting and makex first character upper case
+ * @param  {String} s - single word
+ * @return {String}   word capitalize
+ */
 const capitalize = s => s[0].toUpperCase() + s.slice(1);
 
 export default class ProfileStore {
