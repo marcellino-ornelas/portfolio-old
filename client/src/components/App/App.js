@@ -8,19 +8,17 @@ import { observer, inject } from 'mobx-react';
  * Components 
 */
 
-import Nav from '../Nav';
-import Footer from '../Footer';
-import Social from '../SocialLinks';
-
-// const Loading = () => <div>Loading...</div>;
+import Nav from '@lino/components/Nav';
+import Footer from '@lino/components/Footer';
+import Social from '@lino/components/SocialLinks';
 
 /*
  * Pages
 */
-import AboutMe from '../AboutMe';
-import Projects from '../Projects';
-import ContactMe from '../ContactMe';
-import Home from '../Home/';
+import AboutMe from '@lino/pages/AboutMe';
+import Projects from '@lino/pages/Projects';
+import ContactMe from '@lino/pages/ContactMe';
+import Home from '@lino/pages/Home';
 
 @inject('userStore')
 class App extends Component {

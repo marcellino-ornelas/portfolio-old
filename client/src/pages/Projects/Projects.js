@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
-import Project from './Project/';
 import { observer, inject } from 'mobx-react';
+
+/**
+ * Components
+ */
+import Project from './Project/';
 
 @inject('projectStore')
 @observer
@@ -26,9 +30,9 @@ class Projects extends Component {
 		return (
 			<div>
 				<div className="section">
+					<h2> Projects </h2>
 					<div id="projects" className="container">
-						<h2> Projects </h2>
-						<div className="row">{projects}</div>
+						{projects}
 					</div>
 				</div>
 			</div>

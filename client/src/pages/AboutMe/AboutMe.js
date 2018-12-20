@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { Link as NavLink } from 'react-router-dom';
-import SocialLinks from '../SocialLinks/';
 import { observer, inject } from 'mobx-react';
+
+/**
+ * Components
+ */
+import SocialLinks from '@lino/components/SocialLinks/';
 
 @inject('userStore')
 @observer

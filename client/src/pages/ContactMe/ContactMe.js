@@ -2,27 +2,13 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import classnames from 'classnames';
 
-import Form from '../Form/';
-import InputField from '../Form/InputField/';
-import Textarea from '../Form/Textarea/';
-
-var onlyWords = {
-	validate: /^[a-zA-Z]+$/,
-	error: 'Must only contain letters'
-};
-
-var validator = {
-	email: {
-		validate: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-		error: 'Please use a valid email address'
-	},
-	firstName: onlyWords,
-	lastName: onlyWords,
-	description: {
-		validate: /\w+/,
-		error: 'Can only contain letters, numbers and underscore'
-	}
-};
+/**
+ * Components
+ */
+import Form from '@lino/components/Form';
+import InputField from '@lino/components/Form/InputField';
+import Textarea from '@lino/components/Form/Textarea';
+import { validate } from './validator';
 
 class ContactMe extends Component {
 	constructor(props) {
@@ -40,7 +26,7 @@ class ContactMe extends Component {
 		return (
 			<div className="section container">
 				<h2> Contact Me </h2>
-				<Form onSubmit={data => console.log(data)} validate={validator}>
+				<Form onSubmit={data => console.log(data)} validate={validate}>
 					<InputField type="text" name="firstName" label="First Name" />
 					<InputField type="text" name="lastName" label="Last Name" />
 					<InputField type="text" name="email" label="Email" />

@@ -2,12 +2,71 @@
  * Home Page
 */
 
-.home .contact-me {
-  display: flex;
+.home {
+	h1:nth-child(1n + 1) {
+		margin-top: 0px;
+	}
+
+	&-into {
+		font-size: 1.4em;
+		line-height: 1;
+
+		@media @tablet {
+			font-size: 1em;
+		}
+	}
+
+	&-into__name,
+	&-into__role {
+		text-shadow: 1px 1px 2px #3e3e3e;
+		@media @phone {
+			text-shadow: 1px 1px 1px #000000;
+		}
+	}
+
+	&-into__name {
+		margin-bottom: 0px;
+		font-family: 'Fredericka the Great', cursive;
+		@media @phone {
+			color: @main-color;
+		}
+	}
+
+	&-into__role {
+		font-family: 'VT323', monospace;
+		font-style: italic;
+		letter-spacing: 3px;
+		word-spacing: -5px;
+		font-size: 1.5em;
+		margin-top: 0px;
+		color: @main-color;
+		@media @phone {
+			color: grey;
+		}
+	}
+
+	&-contact {
+		display: flex;
+	}
 }
 
 @media screen and (max-width: 630px) {
-  .home .contact-me {
-    display: block;
-  }
+	.home .home-contact {
+		display: block;
+	}
 }
+
+// .code {
+// 	&__keyword {
+// 		color: #81cafe;
+// 		font-style: italic;
+// 	}
+
+// 	&__operator {
+// 		color: red;
+// 	}
+
+// 	&__string {
+// 		color: yellow;
+// 	}
+// }

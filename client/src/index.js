@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App/';
 import ReactGA from 'react-ga';
 import createHistory from 'history/createBrowserHistory';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { Provider } from 'mobx-react';
 
+import App from '@lino/components/App/';
 ReactGA.initialize('UA-125057302-1');
 
 /*
