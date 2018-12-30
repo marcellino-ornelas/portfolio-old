@@ -17,6 +17,7 @@ export default class ProfileStore {
 		axios('/api/profile')
 			.then(res => {
 				console.log(res.data);
+				console.log('hello', res.data.profile);
 
 				runInAction(() => {
 					this.profile = res.data.profile;

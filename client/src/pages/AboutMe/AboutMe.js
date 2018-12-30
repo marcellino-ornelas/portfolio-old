@@ -11,7 +11,8 @@ import SocialLinks from '@lino/components/SocialLinks/';
 @observer
 class AboutMe extends Component {
 	render() {
-		const store = this.props.userStore;
+		const { fullname, profile } = this.props.userStore;
+		const resume = profile.resume || {};
 
 		return (
 			<div className="about-me row">
@@ -22,34 +23,31 @@ class AboutMe extends Component {
 							alt=""
 							className="profile-pic circle"
 						/>
-						<h6 className="profile-name">{store.fullname}</h6>
+						<h6 className="profile-name">{fullname}</h6>
 					</div>
 					<ul className="collection">
-						<a href="/Resume.pdf" className="collection-item" target="_blank">
+						<a href={resume.url} className="collection-item" target="_blank">
 							Resume
-						</a>
-						<a href="/Resume.pdf" className="collection-item" download>
-							Download Resume
 						</a>
 						<NavLink to="/contact-me" className="collection-item">
 							Contact Me
 						</NavLink>
 					</ul>
 					<div className="center-align">
-						<SocialLinks profile={store.profile} />
+						<SocialLinks profile={profile} />
 					</div>
 				</div>
 				<div className="col s12 m12 l9">
 					<div className="row">
 						<div className="fx header">
-							<h3>{store.fullname}</h3>
+							<h3>{fullname}</h3>
 							{/*<SocialLinks profile={this.props.profile} />*/}
 						</div>
 					</div>
 					<div className="divider" />
 					<div className="row">
 						<div className="s12">
-							<p className="flow-text">{store.profile.description}</p>
+							<p className="flow-text">{profile.description}</p>
 						</div>
 					</div>
 				</div>
