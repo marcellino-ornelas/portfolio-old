@@ -5,6 +5,6 @@
 	"default": true,
 	"cssType": "css",
 	"templates": true,
-	"extendCwd": "./client/src/components",
+	"extendCwd": "./client/src/",
 	"verbose": false
 }

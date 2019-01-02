@@ -17,9 +17,37 @@
 		}
 
 		&__name,
-		&__description {
+		&__description,
+		&__created {
 			margin-top: 5px;
 			margin-bottom: 5px;
+		}
+
+		&__description,
+		&__created {
+			font-weight: 400;
+		}
+
+		&__name {
+			font-size: 1.4em;
+			font-weight: 400;
+			text-transform: capitalize;
+		}
+
+		&__description {
+			margin-top: 10px;
+			font-size: 1.2em;
+			font-family: serif;
+
+			&::first-letter {
+				text-transform: capitalize;
+			}
+		}
+
+		&__created {
+			color: darken(@main-color, 30%);
+			font-style: italic;
+			font-size: 1em;
 		}
 
 		@media @phone {

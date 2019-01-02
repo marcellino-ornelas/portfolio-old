@@ -267,6 +267,12 @@ footer {
 	}
 }
 
+.divider {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-bottom: 0.5px solid grey;
+}
+
 .valign {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -364,7 +370,6 @@ footer {
 /*
  * Form
 */
-
 .input-field {
 	@input-active-color: @secondary-color;
 
@@ -373,10 +378,6 @@ footer {
 		&:focus {
 			border-bottom-color: @input-active-color;
 		}
-
-		// & + label{
-
-		// }
 	}
 
 	.active {
@@ -872,10 +873,8 @@ textarea + label:not(.label-icon).active {
  https://css-tricks.com/snippets/css/truncate-string-with-ellipsis/
 */
 .truncate-text {
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	p {
-		overflow: hidden;
+	span.read-more {
+		cursor: pointer;
+		color: @secondary-color;
 	}
 }
