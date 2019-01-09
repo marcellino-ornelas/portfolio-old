@@ -23,31 +23,30 @@
 			margin-bottom: 5px;
 		}
 
-		&__description,
-		&__created {
-			font-weight: 400;
-		}
-
 		&__name {
 			font-size: 1.4em;
 			font-weight: 400;
+			font-family: 'Cinzel Decorative', cursive;
 			text-transform: capitalize;
-		}
-
-		&__description {
-			margin-top: 10px;
-			font-size: 1.2em;
-			font-family: serif;
-
-			&::first-letter {
-				text-transform: capitalize;
-			}
+			margin-bottom: 0px;
 		}
 
 		&__created {
 			color: darken(@main-color, 30%);
 			font-style: italic;
 			font-size: 1em;
+			font-weight: 100;
+			margin: 0px;
+		}
+
+		&__description {
+			font-size: 1em;
+			line-height: 20px;
+			font-family: 'Raleway', sans-serif;
+
+			&::first-letter {
+				text-transform: capitalize;
+			}
 		}
 
 		@media @phone {

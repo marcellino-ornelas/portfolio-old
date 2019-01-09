@@ -34,27 +34,3 @@ const Project = props => {
 };
 
 export default Project;
-
-/*
-<div className="col s12 m6 l4">
-  <div className="card">
-    <div className="card-image">
-      <img src={picture} alt="" />
-      <span className="card-title"> {props.project.name} </span>
-      <a
-        href={preview}
-        className="btn-floating btn-large halfway-fab waves-effect waves-light red"
-        target="_blank"
-      >
-        <i
-          className="material-icons fa fa-search-plus"
-          aria-hidden="true"
-        />
-      </a>
-    </div>
-    <div className="card-content truncate-text">
-      <p> {props.project.description} </p>
-    </div>
-  </div>
-</div>
-*/

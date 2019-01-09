@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-const READ_MORE_MESSAGE = 'read me...';
+const READ_MORE_MESSAGE = 'read more...';
 
 const Truncate = props => {
 	let text = props.text || '';
