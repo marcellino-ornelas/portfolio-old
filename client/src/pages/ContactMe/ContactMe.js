@@ -5,9 +5,7 @@ import classnames from 'classnames';
 /**
  * Components
  */
-import Form from '@lino/components/Form';
-import InputField from '@lino/components/Form/InputField';
-import Textarea from '@lino/components/Form/Textarea';
+import { Form, InputField, TextArea } from '@lino/components/Form/';
 import { validate } from './validator';
 
 class ContactMe extends Component {
@@ -30,7 +28,7 @@ class ContactMe extends Component {
 					<InputField type="text" name="firstName" label="First Name" />
 					<InputField type="text" name="lastName" label="Last Name" />
 					<InputField type="text" name="email" label="Email" />
-					<Textarea name="description" label="Reason for Contact" />
+					<TextArea name="description" label="Reason for Contact" />
 					<button type="submit">here</button>
 				</Form>
 			</div>

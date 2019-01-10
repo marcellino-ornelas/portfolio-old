@@ -1,1 +1,2 @@
-export { default } from './{{= it.component.name}}.js';
+export { default } from './{{= it.component.name}}';
+export { default as {{= it.component.name}} } from './{{= it.component.name}}';

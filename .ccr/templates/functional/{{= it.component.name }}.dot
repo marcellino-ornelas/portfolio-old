@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
+/**
+ * Components
+ */
+// import _ from '@lino/components/_';
+
+/**
+ * Store
+ */
+// import _ from '@lino/store/_';
+
+/**
+ * pages
+ */
+// import _ from '@lino/pages/_';
+
 const {{= it.component.name}} = (props) => {
   return (<div></div>);
 }

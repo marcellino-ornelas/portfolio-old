@@ -7,46 +7,76 @@
 		margin-top: 0px;
 	}
 
-	&-into {
+	// intro
+	&-intro {
 		font-size: 1.4em;
 		line-height: 1;
 
 		@media @tablet {
 			font-size: 1em;
 		}
-	}
 
-	&-into__name,
-	&-into__role {
-		text-shadow: 1px 1px 2px #3e3e3e;
-		@media @phone {
-			text-shadow: 1px 1px 1px #000000;
+		&__name,
+		&__role {
+			text-shadow: 1px 1px 2px #3e3e3e;
+			@media @phone {
+				text-shadow: 1px 1px 1px #000000;
+			}
+		}
+
+		&__name {
+			margin-bottom: 0px;
+			font-family: 'Fredericka the Great', cursive;
+			@media @phone {
+				color: @main-color;
+			}
+		}
+
+		&__role {
+			font-family: 'VT323', monospace;
+			font-style: italic;
+			letter-spacing: 3px;
+			word-spacing: -5px;
+			font-size: 1.5em;
+			margin-top: 0px;
+			color: @main-color;
+			@media @phone {
+				color: grey;
+			}
 		}
 	}
 
-	&-into__name {
-		margin-bottom: 0px;
-		font-family: 'Fredericka the Great', cursive;
-		@media @phone {
+	// pillars
+	.pillars {
+		.pillar__title {
+			font-family: 'Cinzel Decorative', cursive;
+		}
+
+		.pillar:nth-child(1) .pillar__icon {
 			color: @main-color;
 		}
-	}
 
-	&-into__role {
-		font-family: 'VT323', monospace;
-		font-style: italic;
-		letter-spacing: 3px;
-		word-spacing: -5px;
-		font-size: 1.5em;
-		margin-top: 0px;
-		color: @main-color;
-		@media @phone {
-			color: grey;
+		@media @desktop-up {
+			.pillar:nth-child(2) {
+				font-size: 1.3em;
+				width: 340px;
+				margin-top: 15px;
+			}
+		}
+
+		.pillar:nth-child(3) .pillar__icon {
+			color: @secondary-color;
 		}
 	}
 
+	// contact
 	&-contact {
 		display: flex;
+
+		&__intro h3 {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
 	}
 }
 

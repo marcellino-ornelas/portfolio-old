@@ -240,12 +240,39 @@ footer {
  * flex
 */
 .fx {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	display: flex;
 }
 
+.fx-flex(@grow: 1, @shrink: 1, @width) {
+	-webkit-box-flex: @grow @shrink @width;
+	-webkit-flex: @grow @shrink @width;
+	-ms-flex: @grow @shrink @width;
+	flex: @grow @shrink @width;
+}
+
+.fx-flex(@grow: 1, @shrink: 1) {
+	-webkit-box-flex: @grow @shrink;
+	-webkit-flex: @grow @shrink;
+	-ms-flex: @grow @shrink;
+	flex: @grow @shrink;
+}
+
 .section {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding-top: 2.5rem;
+	@media phone {
+		padding-top: 2rem;
+	}
+}
+
+// only add margin to section if its the last one
+* > .section:nth-last-child(1) {
+	padding-bottom: 2.5rem;
+	@media phone {
+		padding-bottom: 2rem;
+	}
 }
 
 // .space {
@@ -263,7 +290,8 @@ footer {
 
 	@media @phone {
 		width: 100%;
-		padding: 0 1rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 }
 
@@ -364,6 +392,41 @@ footer {
 		color: white;
 		margin-right: 10px;
 		margin-left: 10px;
+	}
+}
+
+.pillars {
+	.fx;
+	justify-content: space-evenly;
+	.pillar {
+		width: 290px;
+		margin-left: 5px;
+		margin-right: 5px;
+		text-align: center;
+
+		&__icon,
+		&__title,
+		&__description {
+			margin-top: 0px;
+			margin-bottom: 0px;
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+
+		&__icon,
+		&__title {
+			margin-bottom: 5px;
+		}
+
+		@media @tablet {
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+		}
+	}
+
+	@media @tablet {
+		display: block;
 	}
 }
 
