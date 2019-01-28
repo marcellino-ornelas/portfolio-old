@@ -8,7 +8,7 @@ const Pillar = props => {
 
 	return (
 		<div className={pillarClasses}>
-			<div className="container">
+			<div className="">
 				<div className="pillar__icon">
 					<Icon name={props.icon} className="fa-3x" />
 				</div>

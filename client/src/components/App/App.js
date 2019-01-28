@@ -5,8 +5,8 @@ import axios from 'axios';
 import { observer, inject } from 'mobx-react';
 
 /*
- * Components 
-*/
+ * Components
+ */
 
 import Nav from '@lino/components/Nav';
 import Footer from '@lino/components/Footer';
@@ -14,7 +14,7 @@ import Social from '@lino/components/SocialLinks';
 
 /*
  * Pages
-*/
+ */
 import AboutMe from '@lino/pages/AboutMe';
 import Projects from '@lino/pages/Projects';
 import ContactMe from '@lino/pages/ContactMe';
@@ -27,7 +27,8 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.props.userStore.fetchProfile();
+		const { userStore } = this.props;
+		userStore.fetchProfile();
 	}
 
 	render() {

@@ -6,24 +6,37 @@ import { observer, inject } from 'mobx-react';
  * Components
  */
 import Background from '@lino/components/Background/';
-import { Pillars, Pillar } from '@lino/components/Pillars/';
+
+/*
+ * Sections
+ */
+import HomeDetails from './HomeDetails';
+import HomeInspire from './HomeInspire';
 
 const Home = inject('userStore')(
 	observer(props => {
 		const userStore = props.userStore;
 		return (
 			<div className="root home">
-				<Background img="/images/computer.jpg">
+				<Background img="/images/computer.jpg" className="home-intro">
 					{!userStore.hasLoaded ? (
 						<div>Loading...</div>
 					) : (
-						<div className="home-intro">
+						<div className="home-intro__details">
 							<h1 className="home-intro__name">{userStore.fullname}</h1>
 							<h2 className="home-intro__role">{userStore.profile.caption}</h2>
 						</div>
 					)}
 				</Background>
-				<div className="section container">
+				<HomeDetails />
+				<HomeInspire />
+			</div>
+		);
+	})
+);
+
+/*
+<div className="section container">
 					<Pillars>
 						<Pillar
 							icon="graduation-cap"
@@ -42,28 +55,5 @@ const Home = inject('userStore')(
 						/>
 					</Pillars>
 				</div>
-				<div className="section container">
-					<div className="valign home-contact">
-						<div className="home-contact__intro">
-							<h3> Want your own website?</h3>
-							<p>
-								Get your dreams to come to life and contact me today for your
-								free quote
-							</p>
-						</div>
-						<div className="center-align container">
-							<NavLink
-								to="/contact-us"
-								className="btn waves-effect waves-light"
-							>
-								Contact Me
-							</NavLink>
-						</div>
-					</div>
-				</div>
-			</div>
-		);
-	})
-);
-
+*/
 export default Home;

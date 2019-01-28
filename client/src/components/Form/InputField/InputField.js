@@ -1,43 +1,66 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import { Consumer } from '../Form.js';
+import { Consumer } from '../Form';
 
 const DEFAULT_INPUT_TYPE = 'text';
 
-const InputField = props => {
-  const type = props.type || DEFAULT_INPUT_TYPE;
-  const label = props.label || props.name;
+class InputField extends Component {
+	constructor(props) {
+		super(props);
 
-  return (
-    <Consumer>
-      {({ setInputValue, errors, getValue }) => {
-        const error = errors[props.name];
-        const value = getValue(props.name);
+		this.state = {
+			focused: false
+		};
 
-        const inputFieldClasses = classnames('input-field', {
-          error: error
-        });
+		this.onFocus = this.onFocus.bind(this);
+		this.onBlur = this.onBlur.bind(this);
+	}
 
-        const labelClasses = classnames({
-          active: value
-        });
+	onFocus() {
+		this.setState({ focused: true });
+	}
 
-        return (
-          <div className={inputFieldClasses}>
-            <input
-              type={type}
-              name={props.name}
-              value={value}
-              onChange={setInputValue}
-            />
-            <label className={labelClasses}>{label}</label>
-            {error ? <p className="error-message">{error}</p> : ''}
-          </div>
-        );
-      }}
-    </Consumer>
-  );
-};
+	onBlur() {
+		this.setState({ focused: false });
+	}
+
+	render() {
+		const label = this.props.label || this.props.name;
+		const { name, type = DEFAULT_INPUT_TYPE } = this.props;
+
+		return (
+			<Consumer>
+				{({ setInputValue, errors, getValue }) => {
+					const error = errors[name];
+					const value = getValue(name);
+
+					const inputFieldClasses = classnames('input-field', {
+						error: error
+					});
+
+					const labelClasses = classnames({
+						active: this.state.focused || !!value
+					});
+
+					return (
+						<div className={inputFieldClasses}>
+							<input
+								type={type}
+								name={name}
+								value={value}
+								onChange={setInputValue}
+								onFocus={this.onFocus}
+								onBlur={this.onBlur}
+							/>
+							<label className={labelClasses}>{label}</label>
+							{error ? <p className="error-message">{error}</p> : ''}
+						</div>
+					);
+				}}
+			</Consumer>
+		);
+	}
+}
 
 export default InputField;

@@ -1,5 +1,5 @@
 var onlyWords = {
-	validate: /^[a-zA-Z]+$/,
+	validate: i => !/\W/g.test(i),
 	error: 'Must only contain letters'
 };
 
@@ -19,4 +19,3 @@ export const validate = {
 		error: 'Can only contain letters, numbers and underscore'
 	}
 };
-

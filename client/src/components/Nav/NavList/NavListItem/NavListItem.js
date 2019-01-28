@@ -10,10 +10,17 @@ const NavListItem = props => {
 
 	return (
 		<li className={navItemClass}>
-			<NavLink to={props.link} className="valign">
-				<i className={iconClasses} />
-				{props.name}
-			</NavLink>
+			{!props.isLink ? (
+				<NavLink to={props.link} className="valign">
+					<i className={iconClasses} />
+					{props.name}
+				</NavLink>
+			) : (
+				<a href={props.link} className="valign">
+					<i className={iconClasses} />
+					{props.name}
+				</a>
+			)}
 		</li>
 	);
 };

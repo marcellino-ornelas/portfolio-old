@@ -25,5 +25,11 @@ exports.new = function(req, res) {
 	};
 
 	const contactMessage = keystone.list('Contact').model(contactInfo);
-	contactMessage.save(cb);
+	contactMessage.save(function(err) {
+		if (err) {
+			res.send({ ok: false, message: 'Email has failed to send' });
+		} else {
+			res.send({ ok: true, message: 'Email has sent' });
+		}
+	});
 };

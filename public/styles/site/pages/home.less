@@ -8,12 +8,14 @@
 	}
 
 	// intro
-	&-intro {
-		font-size: 1.4em;
-		line-height: 1;
+	.home-intro {
+		&__details {
+			font-size: 1.4em;
+			line-height: 1;
 
-		@media @tablet {
-			font-size: 1em;
+			@media @tablet {
+				font-size: 1em;
+			}
 		}
 
 		&__name,
@@ -46,8 +48,11 @@
 		}
 	}
 
-	// pillars
-	.pillars {
+	// details section
+	.home-details {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+
 		.pillar__title {
 			font-family: 'Cinzel Decorative', cursive;
 		}
@@ -56,26 +61,69 @@
 			color: @main-color;
 		}
 
-		@media @desktop-up {
+		.pillar:nth-child(3) .pillar__icon {
+			color: @secondary-color;
+		}
+
+		@media @tablet-up {
 			.pillar:nth-child(2) {
 				font-size: 1.3em;
 				width: 340px;
-				margin-top: 15px;
+				margin-top: 20px;
+
+				.pillar__description {
+					font-size: 1em;
+				}
 			}
 		}
 
-		.pillar:nth-child(3) .pillar__icon {
-			color: @secondary-color;
+		@media @tablet {
+			padding-top: 2em;
+			padding-bottom: 2em;
 		}
 	}
 
 	// contact
-	&-contact {
-		display: flex;
+	.home-inspire {
+		width: 100%;
 
-		&__intro h3 {
+		.bg {
+			max-height: 450px;
+		}
+
+		&__headline {
+			font-family: 'Cinzel Decorative', cursive;
+			margin-bottom: 0px;
+			@media @tablet-up {
+				font-size: 3em;
+				margin-top: 0.5em;
+			}
+		}
+
+		&__slogan {
 			margin-top: 0px;
 			margin-bottom: 0px;
+		}
+
+		&__link {
+			margin-top: 0.5em;
+
+			a {
+				font-weight: 500;
+				font-size: 2.5em;
+				font-family: 'Fredericka the Great', cursive;
+				letter-spacing: 5px;
+				word-spacing: 10px;
+				transition: color 0.5s linear 0.5s;
+			}
+
+			a:hover {
+				color: @main-color;
+			}
+		}
+
+		@media @tablet {
+			font-size: 0.8em;
 		}
 	}
 }
@@ -85,18 +133,3 @@
 		display: block;
 	}
 }
-
-// .code {
-// 	&__keyword {
-// 		color: #81cafe;
-// 		font-style: italic;
-// 	}
-
-// 	&__operator {
-// 		color: red;
-// 	}
-
-// 	&__string {
-// 		color: yellow;
-// 	}
-// }

@@ -2,6 +2,7 @@ const express = require('express');
 const profile = require('./profile');
 const projects = require('./projects');
 const contact = require('./contact');
+const auth = require('./auth');
 
 const router = (module.exports = new express.Router());
 
@@ -20,3 +21,9 @@ router.get('/profile', profile.get);
  */
 
 router.post('/contact', contact.new);
+
+/*
+ * Auth Routes
+ */
+
+router.get('/auth/status', auth.checkAuthStatus);
