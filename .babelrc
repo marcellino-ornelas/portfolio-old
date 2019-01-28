@@ -1,3 +1,4 @@
 {
-  "presets": ["env", "mobx", "react"]
+  "presets": ["env", "mobx", "react"],
+  "plugins": ["transform-object-rest-spread"]
 }

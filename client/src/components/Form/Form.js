@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 export const { Provider, Consumer } = React.createContext();
 
 const isFunc = fn => typeof fn === 'function';
+const nonValid = validatedField => !validatedField.isValid;
 
 class Form extends Component {
 	constructor(props) {
@@ -21,103 +22,99 @@ class Form extends Component {
 	}
 
 	/*
-   * Validate
-   *
-   * validate a input by name and value 
-  */
+	 * Validate
+	 *
+	 * validate a input by name and value
+	 */
 	validate(name, value) {
-		const isEmpty = !value;
-		const noValidation = !this.props.validate || !this.props.validate[name];
-		if (noValidation || isEmpty) {
-			return true;
-		}
-
-		const inputValidator = this.props.validate[name];
-
-		let validate = inputValidator.validate;
+		const field = this.props.validate[name];
+		let validate = field.validate;
 
 		//turn regExp to function
 		if (!isFunc(validate)) {
-			validate = input => inputValidator.validate.test(input);
+			validate = input => field.validate.test(input);
 		}
 
-		const isValidInput = validate(value);
+		const result = { isValid: false, error: '', name };
 
-		return isValidInput;
+		switch (true) {
+			case field.required && !value:
+				result.error = 'This field is required';
+				break;
+			case !validate(value):
+				result.error = field.error;
+				break;
+			default:
+				result.isValid = true;
+		}
+
+		return result;
 	}
 
 	/*
-   * Validate All
-   *
-   * validate all inputs that are specifed in the valiate prop
-  */
+	 * Validate All
+	 *
+	 * validate all inputs that are specifed in the valiate prop
+	 */
 	validateAll() {
 		if (!this.props.validate) {
 			return true;
 		}
 
-		const inputNames = Object.keys(this.props.validate);
-		const errors = this.newErrors();
+		const fieldNames = Object.keys(this.props.validate);
 
-		const isValid = inputNames.reduce((acc, nextItem) => {
-			let inputValue = this.state[nextItem];
+		// Validate all fields
+		const validatedFields = fieldNames.map(fieldName => {
+			let fieldValue = this.state[fieldName];
+			return this.validate(fieldName, fieldValue);
+		});
 
-			if (this.props.validate[nextItem].required && !inputValue) {
-				inputValue = '';
-			}
+		// Find first entry with isValid to false.
+		// Has to have all fields valid to submit
+		const isAllValid = !validatedFields.find(nonValid);
 
-			const isValid = this.validate(nextItem, inputValue);
-
-			// set errors if not valid
-			if (!isValid) {
-				errors[nextItem] = this.props.validate[nextItem].error;
-			}
-
-			return !acc ? acc : isValid;
-		}, true /* isValid defaults to true */);
-
-		// if not valid display errors
-		if (!isValid) {
-			this.setState({
-				errors
-			});
+		// Set all errors
+		if (!isAllValid) {
+			const onlyNonValidFields = validatedFields.filter(nonValid);
+			this.setState({ errors: this.newErrors(onlyNonValidFields) });
 		}
 
-		return isValid;
+		return isAllValid;
 	}
 
 	/*
-   * New Errors
-   * 
-   * Make a copy of the errors state object
-  */
-	newErrors() {
-		return Object.assign(this.state.errors, {});
-	}
+	 * New Errors
+	 *
+	 * Make a copy of the errors state object
+	 */
+	newErrors(validatedFields = []) {
+		// turn argument into array
+		if (!!validatedFields && !Array.isArray(validatedFields)) {
+			validatedFields = [validatedFields];
+		}
 
-	/*
-   * Set Error
-   *
-   * Return a new error object. Deletes error off error object if it is valid or sets it if its not
-  */
-	setError(name, isValid) {
-		const errors = this.newErrors();
-		const inputValidator = this.props.validate[name];
+		const newErrors = { ...this.state.errors };
 
-		errors[name] = isValid ? null : inputValidator.error;
+		validatedFields.forEach(({ name, error }) => {
+			newErrors[name] = error;
+		});
 
-		return errors;
+		return newErrors;
 	}
 
 	setInputValue(e) {
 		const { name, value } = e.target;
+		const newState = { [name]: value, errors: this.newErrors() };
 
-		const isValid = this.validate(name, value);
+		const validatedField = this.validate(name, value);
 
-		this.setState({
-			[name]: value,
-			errors: this.setError(name, isValid)
-		});
+		if (!validatedField.isValid) {
+			newState.errors[name] = validatedField.error;
+		} else {
+			newState.errors[name] = null;
+		}
+
+		this.setState(newState);
 	}
 
 	onSubmit(e) {
