@@ -29,7 +29,9 @@ class ContactMe extends Component {
 					<InputField type="text" name="lastName" label="Last Name" />
 					<InputField type="text" name="email" label="Email" />
 					<TextArea name="description" label="Reason for Contact" />
-					<button type="submit">here</button>
+					<button className="btn btn-secondary" type="submit">
+						Send contact request
+					</button>
 				</Form>
 			</div>
 		);

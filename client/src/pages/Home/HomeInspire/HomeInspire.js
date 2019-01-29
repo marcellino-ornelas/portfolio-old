@@ -45,14 +45,13 @@ class HomeInspire extends Component {
 	}
 
 	render() {
-		console.log('in view', this.state.inView);
 		const inspireClasses = classnames('home-inspire', {
 			active: this.state.inView
 		});
 		return (
 			<div className={inspireClasses}>
 				<Background img="/images/skys-the-limit.jpg" center={false}>
-					<div className="center-align">
+					<div className="center-align home-inspire__content">
 						<h3 className="home-inspire__headline animate-reveal animate-first">
 							The Sky is the Limit
 						</h3>

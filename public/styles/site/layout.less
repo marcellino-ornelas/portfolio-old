@@ -321,19 +321,25 @@ footer {
 	text-align: center;
 }
 
-.btn {
-	@button-color: lightblue;
+.btn-colors(@color) {
+	@darken: 10%;
+	background-color: lighten(@color, 5%);
+	color: white;
+	&:hover {
+		background-color: @color;
+	}
+}
 
+.btn {
+	.btn-colors(@main-color);
 	border-color: transparent;
 	border-style: none;
-	font-size: 24px;
-
-	background-color: @button-color;
 	border-radius: 5px;
 	color: white;
+	cursor: pointer;
 	display: inline-block;
+	font-size: 24px;
 	padding: 5px 10px;
-
 	-webkit-transition: background-color 0.2s ease-out;
 	transition: background-color 0.2s ease-out;
 
@@ -341,8 +347,8 @@ footer {
 	box-shadow+: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 	box-shadow+: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
 
-	&:hover {
-		background-color: darken(@button-color, 10%);
+	&.btn-secondary {
+		.btn-colors(@secondary-color);
 	}
 }
 
@@ -431,15 +437,19 @@ footer {
 
 		input,
 		textarea {
+			margin-bottom: 0px;
 			border-bottom-color: red;
 		}
 
 		.error-message {
-			display: initial;
+			display: block;
+			margin-top: 10px;
+			margin-bottom: 20px;
 		}
 	}
 
 	.error-message {
+		font-size: 0.7em;
 		display: none;
 		color: red;
 	}
