@@ -11,7 +11,7 @@ const HomeDetails = () => (
 		<Pillars>
 			<Pillar
 				icon="graduation-cap"
-				title="Experince"
+				title="Experience"
 				description="Graduate of Full Stack Web Developer courses from Hack Reactor and General Assembly"
 			/>
 			<Pillar

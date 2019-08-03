@@ -1,0 +1,203 @@
+/*
+ * Form
+*/
+.input-field {
+	@input-active-color: @secondary-color;
+
+	input,
+	textarea {
+		&:focus {
+			border-bottom-color: @input-active-color;
+		}
+	}
+
+	.active {
+		color: @input-active-color;
+	}
+
+	&.error {
+		color: red;
+
+		label {
+			color: red;
+		}
+
+		input,
+		textarea {
+			margin-bottom: 0px;
+			border-bottom-color: red;
+		}
+
+		.error-message {
+			display: block;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+	}
+
+	.error-message {
+		font-size: 0.7em;
+		display: none;
+		color: red;
+	}
+}
+
+/*
+ * Materialize label transisiton
+ * https://materializecss.com
+*/
+
+/* Text inputs */
+input:not([type]),
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='url'],
+input[type='time'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='tel'],
+input[type='number'],
+input[type='search'],
+textarea {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #9e9e9e;
+	border-radius: 0;
+	outline: none;
+	height: 3rem;
+	width: 100%;
+	font-size: 1rem;
+	margin: 0 0 20px 0;
+	padding: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+input:not([type]) + label:after,
+input[type='text'] + label:after,
+input[type='password'] + label:after,
+input[type='email'] + label:after,
+input[type='url'] + label:after,
+input[type='time'] + label:after,
+input[type='date'] + label:after,
+input[type='datetime'] + label:after,
+input[type='datetime-local'] + label:after,
+input[type='tel'] + label:after,
+input[type='number'] + label:after,
+input[type='search'] + label:after,
+textarea + label:after,
+.select-wrapper + label:after {
+	display: block;
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	opacity: 0;
+	-webkit-transition: 0.2s opacity ease-out, 0.2s color ease-out;
+	transition: 0.2s opacity ease-out, 0.2s color ease-out;
+}
+
+.input-field {
+	position: relative;
+	margin-top: 1rem;
+}
+
+.input-field label {
+	color: #9e9e9e;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	font-size: 1rem;
+	cursor: text;
+	-webkit-transition: -webkit-transform 0.2s ease-out;
+	transition: -webkit-transform 0.2s ease-out;
+	transition: transform 0.2s ease-out;
+	transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+	-webkit-transform-origin: 0% 100%;
+	transform-origin: 0% 100%;
+	text-align: initial;
+	-webkit-transform: translateY(12px);
+	transform: translateY(12px);
+	pointer-events: none;
+}
+
+.input-field input:focus + label,
+.input-field label:not(.label-icon).active {
+	-webkit-transform: translateY(-14px) scale(0.8);
+	transform: translateY(-14px) scale(0.8);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+/* Search Field */
+.input-field input[type='search'] {
+	display: block;
+	line-height: inherit;
+}
+
+.input-field input[type='search']:focus {
+	background-color: #fff;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #444;
+}
+
+.input-field input[type='search']:focus + label i,
+.input-field input[type='search']:focus ~ .mdi-navigation-close,
+.input-field input[type='search']:focus ~ .material-icons {
+	color: #444;
+}
+
+.input-field input[type='search'] + label {
+	left: 1rem;
+}
+
+.input-field input[type='search'] ~ .mdi-navigation-close,
+.input-field input[type='search'] ~ .material-icons {
+	position: absolute;
+	top: 0;
+	right: 1rem;
+	color: transparent;
+	cursor: pointer;
+	font-size: 2rem;
+	-webkit-transition: 0.3s color;
+	transition: 0.3s color;
+}
+
+/* Textarea */
+textarea {
+	width: 100%;
+	height: 3rem;
+	background-color: transparent;
+}
+
+textarea {
+	overflow-y: hidden;
+	/* prevents scroll bar flash */
+	padding: 0.8rem 0 1.6rem 0;
+	/* prevents text jump on Enter keypress */
+	resize: none;
+	min-height: 3rem;
+}
+
+textarea + label {
+	height: 100%;
+}
+
+textarea + label::after {
+	top: calc(100% - 12px);
+}
+
+.input-field textarea:focus + label,
+textarea + label:not(.label-icon).active {
+	-webkit-transform: translateY(-25px);
+	transform: translateY(-25px);
+}
