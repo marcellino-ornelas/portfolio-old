@@ -9,7 +9,7 @@
     "dotenv": "4.0.0",
     "font-awesome": "^4.7.0",
     "joi": "^13.6.0",
-    "keystone": "^4.0.0",
+    "keystone": "^4.2.1",
     "keystone-storage-adapter-s3": "^1.1.1",
     "lodash": "^4.13.1",
     "mobx": "^5.5.0",
@@ -21,18 +21,18 @@
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.20.7",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-decorators": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^8.3.0",
     "eslint": "3.15.0",
     "eslint-config-keystone": "3.0.0",
     "eslint-plugin-react": "^5.1.1",
     "nodemon": "^1.18.3",
-    "webpack": "^4.17.1",
-    "webpack-cli": "^3.1.0"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "scripts": {
     "lint": "eslint .",
